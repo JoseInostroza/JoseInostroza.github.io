@@ -47,21 +47,42 @@
                         <div class= "w-full h-44 flex flex-col">
                             <div class="w-full h-3/4 bg-dove bg-cover"></div>
                             <div class="text-xs px-1">
-                                <p class="text-base text-center">Kroz</p>
+                                <p class="text-base text-center">Dove</p>
                                 PP:<i>0</i> PO:<i>7</i> PT:<i>0</i> PC:<i>0</i>
                             </div>
                         </div>
                     </label> 
-                    <input class="hidden" type="radio" name="miembro" id="trini">
-                        <label for="trini">Trini</label>
-                    </input> 
-                    <input class="hidden" type="radio" name="miembro" id="gasef">
-                        <label for="gasef">Gasef</label>
-                    </input> 
-                    <input class="hidden" type="radio" name="miembro" id="souken">
-                        <label for="souken">Sou-ken</label>
-                    </input>
-                    <button>registrar</button>
+                    <input class="hidden peer/trini" type="radio" name="miembro" id="trini">
+                    <label for="trini" class="bg-blue-900 mt-3 peer-checked/trini:bg-cyan-400 peer-checked/trini:border-4 peer-checked/trini:border-yellow-50 ">
+                        <div class= "w-full h-44 flex flex-col">
+                            <div class="w-full h-3/4 bg-trini bg-cover"></div>
+                            <div class="text-xs px-1">
+                                <p class="text-base text-center">Trini</p>
+                                PP:<i>0</i> PO:<i>22</i> PT:<i>0</i> PC:<i>0</i>
+                            </div>
+                        </div>
+                    </label> 
+                    <input class="hidden peer/gasef" type="radio" name="miembro" id="gasef">
+                    <label for="gasef" class="bg-blue-900 mt-3 peer-checked/gasef:bg-cyan-400 peer-checked/gasef:border-4 peer-checked/gasef:border-yellow-50 ">
+                        <div class= "w-full h-44 flex flex-col">
+                            <div class="w-full h-3/4 bg-gasef bg-cover"></div>
+                            <div class="text-xs px-1">
+                                <p class="text-base text-center">Gasef</p>
+                                PP:<i>0</i> PO:<i>7</i> PT:<i>0</i> PC:<i>0</i>
+                            </div>
+                        </div>
+                    </label> 
+                    <input class="hidden peer/souken" type="radio" name="miembro" id="souken">
+                    <label for="souken" class="bg-blue-900 mt-3 peer-checked/souken:bg-cyan-400 peer-checked/souken:border-4 peer-checked/souken:border-yellow-50 ">
+                        <div class= "w-full h-44 flex flex-col">
+                            <div class="w-full h-3/4 bg-souken bg-cover"></div>
+                            <div class="text-xs px-1">
+                                <p class="text-base text-center">Sou-ken</p>
+                                PP:<i>0</i> PO:<i>10</i> PT:<i>0</i> PC:<i>0</i>
+                            </div>
+                        </div>
+                    </label> 
+                    <button id="bt_registrar" class="bg-slate-300 mt-4 py-1 px-2 rounded-full">registrar</button>
                 </div>
             </div>
             <div class="bg-blue-300 h-full w-full">
@@ -140,24 +161,58 @@
                         </div>
                     </div>
                 <p>Pesadas</p>
-                    <div>
-                        <img src="" alt="cota guarnecida"><p>precio</p>
-                    </div>
-                    <div>
-                        <img src="" alt="cota de malla"><p>precio</p>
-                    </div>
-                    <div>
-                        <img src="" alt="armadura de bandas"><p>precio</p>
-                    </div>
-                    <div>
-                        <img src="" alt="armadura de placas"><p>precio</p>
+                    <div id="Pesadas" class="contenedor">
+                        <div class="card_cont">
+                            <div class="bg-pieles card_img"></div>
+                            <div class="card_text_cont">
+                                <p class="col-span-2">Media Armadura</p>                            
+                                <p><strong>750</strong>  PO</p>
+                                <button class="card_buton">añadir</button>
+                            </div>
+                        </div>
+                        <div class="card_cont">
+                            <div class="bg-pieles card_img"></div>
+                            <div class="card_text_cont">
+                                <p class="col-span-2">Media Armadura</p>                            
+                                <p><strong>750</strong>  PO</p>
+                                <button class="card_buton">añadir</button>
+                            </div>
+                        </div>
+                        <div class="card_cont">
+                            <div class="bg-pieles card_img"></div>
+                            <div class="card_text_cont">
+                                <p class="col-span-2">Media Armadura</p>                            
+                                <p><strong>750</strong>  PO</p>
+                                <button class="card_buton">añadir</button>
+                            </div>
+                        </div>
+                        <div class="card_cont">
+                            <div class="bg-pieles card_img"></div>
+                            <div class="card_text_cont">
+                                <p class="col-span-2">Media Armadura</p>                            
+                                <p><strong>750</strong>  PO</p>
+                                <button class="card_buton">añadir</button>
+                            </div>
+                        </div>
                     </div>
                 <p>Escudos</p>
-                    <div>
-                        <img src="" alt="escudo"><p>precio</p>
-                    </div>
-                    <div>
-                        <img src="" alt="escudo grande"><p>precio</p>
+                    <div id="escudos" class="contenedor">
+                        <div class="card_cont">
+                            <div class="bg-pieles card_img"></div>
+                            <div class="card_text_cont">
+                                <p class="col-span-2">Media Armadura</p>                            
+                                <p><strong>750</strong>  PO</p>
+                                <button class="card_buton">añadir</button>
+                            </div>
+                        </div>
+                        <div class="card_cont">
+                            <div class="bg-pieles card_img"></div>
+                            <div class="card_text_cont">
+                                <p class="col-span-2">Media Armadura</p>                            
+                                <p><strong>750</strong>  PO</p>
+                                <button class="card_buton">añadir</button>
+                            </div>
+                        </div>
                     </div>
             </div>
             <div id="armas">

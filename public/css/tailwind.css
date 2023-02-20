@@ -521,12 +521,12 @@ video {
   margin-top: 0.5rem;
 }
 
-.mt-1 {
-  margin-top: 0.25rem;
-}
-
 .mt-3 {
   margin-top: 0.75rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
 }
 
 .flex {
@@ -591,10 +591,12 @@ video {
   margin-left: calc(1.25rem * calc(1 - var(--tw-space-x-reverse)));
 }
 
-.space-y-2 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0;
-  margin-top: calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));
-  margin-bottom: calc(0.5rem * var(--tw-space-y-reverse));
+.rounded {
+  border-radius: 0.25rem;
+}
+
+.rounded-full {
+  border-radius: 9999px;
 }
 
 .bg-blue-300 {
@@ -627,6 +629,11 @@ video {
   background-color: rgb(113 63 18 / var(--tw-bg-opacity));
 }
 
+.bg-slate-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(203 213 225 / var(--tw-bg-opacity));
+}
+
 .bg-cuero {
   background-image: URL(https://www.eliteguias.com/img/juegos/dark-souls-iii/armadura-de-cuero-negra.jpg);
 }
@@ -635,8 +642,16 @@ video {
   background-image: URL(https://www.eliteguias.com/img/juegos/dark-souls-iii/armadura-de-cuero-rigido.jpg);
 }
 
+.bg-dove {
+  background-image: URL(/src/img/dove.jpg);
+}
+
 .bg-escamas {
   background-image: URL(https://i.pinimg.com/736x/f7/3f/1c/f73f1cf1542e229d9f57ecdca3b688be.jpg);
+}
+
+.bg-gasef {
+  background-image: URL(/src/img/gasef.png);
 }
 
 .bg-kroz {
@@ -655,8 +670,12 @@ video {
   background-image: URL(https://www.eliteguias.com/img/juegos/dark-souls-iii/armadura-de-caballero-caido.jpg);
 }
 
-.bg-dove {
-  background-image: URL(/src/img/dove.jpg);
+.bg-souken {
+  background-image: URL(/src/img/souken.png);
+}
+
+.bg-trini {
+  background-image: URL(/src/img/trini.jpg);
 }
 
 .bg-cover {
@@ -674,6 +693,16 @@ video {
 .px-1 {
   padding-left: 0.25rem;
   padding-right: 0.25rem;
+}
+
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 
 .pl-4 {
@@ -758,6 +787,14 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.peer\/dove:checked ~ .peer-checked\/dove\:border-4 {
+  border-width: 4px;
+}
+
+.peer\/gasef:checked ~ .peer-checked\/gasef\:border-4 {
+  border-width: 4px;
+}
+
 .peer\/kroz:checked ~ .peer-checked\/kroz\:border-4 {
   border-width: 4px;
 }
@@ -766,12 +803,22 @@ video {
   border-width: 4px;
 }
 
-.peer:checked ~ .peer-checked\/\:border-4 {
+.peer\/souken:checked ~ .peer-checked\/souken\:border-4 {
   border-width: 4px;
 }
 
-.peer\/dove:checked ~ .peer-checked\/dove\:border-4 {
+.peer\/trini:checked ~ .peer-checked\/trini\:border-4 {
   border-width: 4px;
+}
+
+.peer\/dove:checked ~ .peer-checked\/dove\:border-yellow-50 {
+  --tw-border-opacity: 1;
+  border-color: rgb(254 252 232 / var(--tw-border-opacity));
+}
+
+.peer\/gasef:checked ~ .peer-checked\/gasef\:border-yellow-50 {
+  --tw-border-opacity: 1;
+  border-color: rgb(254 252 232 / var(--tw-border-opacity));
 }
 
 .peer\/kroz:checked ~ .peer-checked\/kroz\:border-yellow-50 {
@@ -784,14 +831,24 @@ video {
   border-color: rgb(254 252 232 / var(--tw-border-opacity));
 }
 
-.peer:checked ~ .peer-checked\/\:border-yellow-50 {
+.peer\/souken:checked ~ .peer-checked\/souken\:border-yellow-50 {
   --tw-border-opacity: 1;
   border-color: rgb(254 252 232 / var(--tw-border-opacity));
 }
 
-.peer\/dove:checked ~ .peer-checked\/dove\:border-yellow-50 {
+.peer\/trini:checked ~ .peer-checked\/trini\:border-yellow-50 {
   --tw-border-opacity: 1;
   border-color: rgb(254 252 232 / var(--tw-border-opacity));
+}
+
+.peer\/dove:checked ~ .peer-checked\/dove\:bg-cyan-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(34 211 238 / var(--tw-bg-opacity));
+}
+
+.peer\/gasef:checked ~ .peer-checked\/gasef\:bg-cyan-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(34 211 238 / var(--tw-bg-opacity));
 }
 
 .peer\/kroz:checked ~ .peer-checked\/kroz\:bg-cyan-400 {
@@ -804,17 +861,12 @@ video {
   background-color: rgb(34 211 238 / var(--tw-bg-opacity));
 }
 
-.peer:checked ~ .peer-checked\/\:bg-cyan-400 {
+.peer\/souken:checked ~ .peer-checked\/souken\:bg-cyan-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(34 211 238 / var(--tw-bg-opacity));
 }
 
-.peer\/dove:checked ~ .peer-checked\/dove\:bg-cyan-400 {
+.peer\/trini:checked ~ .peer-checked\/trini\:bg-cyan-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(34 211 238 / var(--tw-bg-opacity));
-}
-
-.peer\/dove:checked ~ .peer-checked\/dove\:text-cyan-200 {
-  --tw-text-opacity: 1;
-  color: rgb(165 243 252 / var(--tw-text-opacity));
 }
