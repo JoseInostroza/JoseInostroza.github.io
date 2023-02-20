@@ -1,0 +1,15 @@
+{
+  "name": "tienda-rol",
+  "version": "1.0.0",
+  "description": "tienda para ayudar a mi querido master",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "tw": "tailwind -i ./src/css/tailwind.css -o ./public/css/tailwind.css --watch"
+  },
+  "author": "PepeDEV",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.2.6"
+  }
+}

@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.contenedor{
+    @apply w-full h-72 ml-2 pt-1 space-x-4  overflow-auto overscroll-contain flex
+}
+
+.card_cont{
+    @apply w-40 h-60 rounded-lg flex-none shadow-md
+}
+
+.card_img{
+    @apply w-full h-2/3 bg-cover rounded-t-md
+}
+
+.card_text_cont{
+    @apply grid grid-flow-row grid-cols-2 gap-3 justify-items-center items-center
+}
+
+.card_buton{
+    @apply bg-red-200 mr-2 rounded-md shadow-sm px-3 py-1
+}

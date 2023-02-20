@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tienda DnD</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/public/css/tailwind.css">
+</head>
+<body class="font-EB">
+    <nav class="w-full h-10 pl-4 bg-slate-400 space-x-5 items-center">
+        <a href="#" class="">Registro</a>
+        <a href="#">Tienda</a>
+        <a href="#">Batalla</a>
+    </nav>
+    <section class="w-full h-full">
+        <div class="w-full h-2/3 grid grid-cols-2">
+            <div class="bg-red-200 h-full w-full p-2">
+                <h3>La Party</h3>
+                <div class="w-full flex flex-col" id="personajes">
+                    <input class="hidden peer/nahala" type="radio" name="miembro" id="nahala">
+                    <label for="nahala" class="bg-blue-900 mt-2 peer-checked/nahala:bg-cyan-400 peer-checked/nahala:border-4 peer-checked/nahala:border-yellow-50 ">
+                        <div class= "w-full h-44 flex flex-col">
+                            <div class="w-full h-3/4 bg-nahala bg-cover"></div>
+                            <div class="text-xs px-1">
+                                <p class="text-base text-center">Nahala</p>
+                                PP:<i>0</i> PO:<i>15</i> PT:<i>0</i> PC:<i>0</i>
+                            </div>
+                        </div>
+                    </label>
+                    </input>
+                    <input class="peer/kroz hidden" type="radio" name="miembro" id="kroz">
+                    <label for="kroz" class="bg-blue-900 mt-3 peer-checked/kroz:bg-cyan-400 peer-checked/kroz:border-4 peer-checked/kroz:border-yellow-50 ">
+                        <div class= "w-full h-44 flex flex-col">
+                            <div class="w-full h-3/4 bg-kroz bg-cover"></div>
+                            <div class="text-xs px-1">
+                                <p class="text-base text-center">Kroz</p>
+                                PP:<i>0</i> PO:<i>2</i> PT:<i>0</i> PC:<i>0</i>
+                            </div>
+                        </div>
+                    </label> 
+                    <input class="hidden peer/dove" type="radio" name="miembro" id="dove">
+                    <label for="dove" class="bg-blue-900 mt-3 peer-checked/dove:bg-cyan-400 peer-checked/dove:border-4 peer-checked/dove:border-yellow-50 ">
+                        <div class= "w-full h-44 flex flex-col">
+                            <div class="w-full h-3/4 bg-dove bg-cover"></div>
+                            <div class="text-xs px-1">
+                                <p class="text-base text-center">Kroz</p>
+                                PP:<i>0</i> PO:<i>7</i> PT:<i>0</i> PC:<i>0</i>
+                            </div>
+                        </div>
+                    </label> 
+                    <input class="hidden" type="radio" name="miembro" id="trini">
+                        <label for="trini">Trini</label>
+                    </input> 
+                    <input class="hidden" type="radio" name="miembro" id="gasef">
+                        <label for="gasef">Gasef</label>
+                    </input> 
+                    <input class="hidden" type="radio" name="miembro" id="souken">
+                        <label for="souken">Sou-ken</label>
+                    </input>
+                    <button>registrar</button>
+                </div>
+            </div>
+            <div class="bg-blue-300 h-full w-full">
+                lista carrito
+            </div>
+        </div>
+        <div class="w-full h-5/6 bg-yellow-900">
+            <a href="#armaduras">Armaduras</a>
+            <a href="#armas">Armas</a>
+            <a href="#equipo">Equipo Aventurero</a>
+            <a href="#alojo">Comida y Alojamiento</a>
+        </div>
+        <div class="w-full h-1/6 bg-yellow-300 p-4">            
+                <p>Armaduras</p>
+                <div id="aramaduras" class="p-2">
+                    <p>Ligeras</p>
+                    <div id="ligeras" class="contenedor">
+                        <div class="card_cont">
+                            <div class="bg-cuero card_img"></div>
+                            <div class="card_text_cont">
+                                <p class="col-span-2">Armadura de Cuero</p>                            
+                                <p><strong>10</strong>  PO</p>
+                                <button class="card_buton ">añadir</button>
+                            </div>
+                        </div>
+                        <div class="card_cont">
+                            <div class="bg-cuerot card_img"></div>
+                            <div class="card_text_cont">
+                                <p class="col-span-2">Cuero Tachonado</p>                            
+                                <p><strong>40</strong>  PO</p>
+                                <button class="card_buton">añadir</button>
+                            </div>
+                        </div>
+                </div>
+                <p>Medias</p>
+                    <div id="medias" class="contenedor">
+                        <div class="card_cont">
+                            <div class="bg-pieles card_img"></div>
+                            <div class="card_text_cont">
+                                <p class="col-span-2">Pieles</p>                            
+                                <p><strong>10</strong>  PO</p>
+                                <button class="card_buton">añadir</button>
+                            </div>
+                        </div>
+                        <div class="card_cont">
+                            <div class="bg-mallaC card_img"></div>
+                            <div class="card_text_cont">
+                                <p class="col-span-2">Camisa de Malla</p>                            
+                                <p><strong>50</strong>  PO</p>
+                                <button class="card_buton">añadir</button>
+                            </div>
+                        </div>
+                        <div class="card_cont">
+                            <div class="bg-escamas card_img"></div>
+                            <div class="card_text_cont">
+                                <p class="col-span-2">Cota de Escama</p>                            
+                                <p><strong>50</strong>  PO</p>
+                                <button class="card_buton">añadir</button>
+                            </div>
+                        </div>
+                        <div class="card_cont">
+                            <div class="bg-pieles card_img"></div>
+                            <div class="card_text_cont">
+                                <p class="col-span-2">Coraza</p>                            
+                                <p><strong>400</strong>  PO</p>
+                                <button class="card_buton">añadir</button>
+                            </div>
+                        </div>
+                        <div class="card_cont">
+                            <div class="bg-pieles card_img"></div>
+                            <div class="card_text_cont">
+                                <p class="col-span-2">Media Armadura</p>                            
+                                <p><strong>750</strong>  PO</p>
+                                <button class="card_buton">añadir</button>
+                            </div>
+                        </div>
+                    </div>
+                <p>Pesadas</p>
+                    <div>
+                        <img src="" alt="cota guarnecida"><p>precio</p>
+                    </div>
+                    <div>
+                        <img src="" alt="cota de malla"><p>precio</p>
+                    </div>
+                    <div>
+                        <img src="" alt="armadura de bandas"><p>precio</p>
+                    </div>
+                    <div>
+                        <img src="" alt="armadura de placas"><p>precio</p>
+                    </div>
+                <p>Escudos</p>
+                    <div>
+                        <img src="" alt="escudo"><p>precio</p>
+                    </div>
+                    <div>
+                        <img src="" alt="escudo grande"><p>precio</p>
+                    </div>
+            </div>
+            <div id="armas">
+                <p>Armas</p>
+                <p>Cuerpo a cuerpo sensilla</p>
+                    <div>
+                        <img src="" alt="baston"><p>precio</p>
+                    </div>
+                    <div>
+                        <img src="" alt="daga"><p>precio</p>
+                    </div>
+                    <div>
+                        <img src="" alt="garrote"><p>precio</p>
+                    </div>
+                    <div>
+                        <img src="" alt="garrote grande"><p>precio</p>
+                    </div>
+                    <div>
+                        <img src="" alt="hacha de mano"><p>precio</p>
+                    </div>
+                    <div>
+                        <img src="" alt="javalina"><p>precio</p>
+                    </div>
+                    <div>
+                        <img src="" alt="lanza"><p>precio</p>
+                    </div>
+                    <div>
+                        <img src="" alt="martillo ligero"><p>precio</p>
+                    </div>
+                    <div>
+                        <img src="" alt="maza">
+                        <p>precio</p>
+                    </div>
+                <p>Distacia sensilla</p>
+                    <div>
+                        <img src="" alt="arco corto">
+                        <p>precio</p>
+                    </div>
+                    <div>
+                        <img src="" alt="dardo">
+                        <p>precio</p>
+                    </div>
+                    <div>
+                        <img src="" alt="ballesta">
+                        <p>precio</p>
+                    </div>
+                    <div>
+                        <img src="" alt="honda">
+                        <p>precio</p>
+                    </div>
+                <p>Cuerpo a cuerpo marcial</p>
+                <p>Distancia  marcial</p>
+            </div>
+            <div id="equipo">
+                Equipo
+            </div>
+            <div id="alojo">
+                Alojo
+            </div>
+        </div>
+    </section>
+    <footer></footer>
+</body>
+</html>
