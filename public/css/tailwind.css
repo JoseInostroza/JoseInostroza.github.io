@@ -517,6 +517,18 @@ video {
   grid-column: span 2 / span 2;
 }
 
+.col-span-3 {
+  grid-column: span 3 / span 3;
+}
+
+.row-span-2 {
+  grid-row: span 2 / span 2;
+}
+
+.row-span-3 {
+  grid-row: span 3 / span 3;
+}
+
 .mt-2 {
   margin-top: 0.5rem;
 }
@@ -527,6 +539,10 @@ video {
 
 .mt-4 {
   margin-top: 1rem;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
 }
 
 .flex {
@@ -569,12 +585,32 @@ video {
   height: 100%;
 }
 
+.h-3 {
+  height: 0.75rem;
+}
+
+.h-36 {
+  height: 9rem;
+}
+
+.h-20 {
+  height: 5rem;
+}
+
 .w-full {
   width: 100%;
 }
 
+.grid-flow-row {
+  grid-auto-flow: row;
+}
+
 .grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.grid-cols-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .flex-col {
@@ -583,6 +619,10 @@ video {
 
 .items-center {
   align-items: center;
+}
+
+.justify-items-center {
+  justify-items: center;
 }
 
 .space-x-5 > :not([hidden]) ~ :not([hidden]) {
@@ -630,10 +670,6 @@ video {
   background-color: rgb(113 63 18 / var(--tw-bg-opacity));
 }
 
-.bg-cuero {
-  background-image: URL(https://www.eliteguias.com/img/juegos/dark-souls-iii/armadura-de-cuero-negra.jpg);
-}
-
 .bg-cuerot {
   background-image: URL(https://www.eliteguias.com/img/juegos/dark-souls-iii/armadura-de-cuero-rigido.jpg);
 }
@@ -672,6 +708,10 @@ video {
 
 .bg-souken {
   background-image: URL(/src/img/souken.png);
+}
+
+.bg-cuero {
+  background-image: URL(https://www.eliteguias.com/img/juegos/dark-souls-iii/armadura-de-cuero-negra.jpg);
 }
 
 .bg-cover {
@@ -723,22 +763,16 @@ video {
   line-height: 1rem;
 }
 
+.shadow-lg {
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .contenedor {
-  margin-left: 0.5rem;
-  display: flex;
-  height: 18rem;
+  display: grid;
   width: 100%;
-}
-
-.contenedor > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-x-reverse: 0;
-  margin-right: calc(1rem * var(--tw-space-x-reverse));
-  margin-left: calc(1rem * calc(1 - var(--tw-space-x-reverse)));
-}
-
-.contenedor {
-  overflow: auto;
-  overscroll-behavior: contain;
+  grid-auto-flow: row;
   padding-top: 0.25rem;
 }
 

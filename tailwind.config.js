@@ -13,6 +13,7 @@ module.exports = {
         'layka' : "URL(/src/img/trini.jpg)",
         'gasef' : "URL(/src/img/gasef.png)",
         'souken' : "URL(/src/img/souken.png)",
+        'liviana' :"URL(/src/svg/cloth-fabric-svgrepo-com.svg)", 
         'cuero' : "URL(https://www.eliteguias.com/img/juegos/dark-souls-iii/armadura-de-cuero-negra.jpg)",
         'cuerot' : "URL(https://www.eliteguias.com/img/juegos/dark-souls-iii/armadura-de-cuero-rigido.jpg)",
         'pieles' : "URL(https://www.eliteguias.com/img/juegos/dark-souls-iii/armadura-de-caballero-caido.jpg)",
