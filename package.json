@@ -12,6 +12,7 @@
   "devDependencies": {
     "tailwindcss": "^3.2.6"
   },
+  "type": "module",
   "dependencies": {
     "boxicons": "^2.1.4",
     "csv-parser": "^3.0.0"
