@@ -13,6 +13,7 @@
     "tailwindcss": "^3.2.6"
   },
   "dependencies": {
-    "boxicons": "^2.1.4"
+    "boxicons": "^2.1.4",
+    "csv-parser": "^3.0.0"
   }
 }

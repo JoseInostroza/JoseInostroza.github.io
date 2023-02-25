@@ -1,0 +1,34 @@
+Objeto,Precio,Daño,Peso en Libras,Peso en Kilos,Propiedades
+Armas Cuerpo a Cuerpo Sencillas,,,,,
+Baston,2 PP,1D6 Contundente,4,"1,8",Versatil (1D8)
+Daga,2 PO,1D4 Perforante,1,"0,5","Arrojadiza (alcance 20/60) ligera, sutil"
+Garrote,1 PP,1D4 Contundente,2,"0,9",Ligero
+Garrote Grande,2 PP,1D8 Contundente,10,"4,5",A dos Manos
+Hacha de Mano,5 PO,1D6 Cortante,2,"0,9",Arrojadiza (alcance 20/60) ligera
+Jabalina,5 PP,1D6 Perforante,2,"0,9",Arrojadiza (alcance 30/120)
+Lanza,1 PO,1D6 Perforante,3,"1,4","Arrojadiza (alcance 20/60), versatil (1D8)"
+Martillo Ligero,2 PO,1D4 Contundente,2,"0,9",Arrojadiza (alcance 20/60) ligera
+Maza,5 PO,1D6 Contundente,4,"1,8",
+Armas a Distancia Sencillas,,,,,
+Arco Corto,25 PO,1D6 Perforante,2,"0,9","A dos Manos, municion (alcance 80/320)"
+Ballesta,25 PO,1D8 Perforante,5,"2,3","A dos Manos, municion (alcance 80/320) Recarga"
+Dardo,5 PC,1D4 Perforante,"0,25","0,1","Arrojadizo (alcance 20/60), sutil"
+Honda,1 PP,1D4 Contundente,,0,Municion (alcance 30/120)
+Armas Cuerpo a Cuerpo Marciales,,,,,
+Alabarda,20 PO,1D10 Cortante,6,"2,7","A dos Manos, Gran alcance, pesada"
+Cimitarra,25 PO,1D6 Cortante,3,"1,4","Ligera, Sutil"
+Espada Corta,10 PO,1D6 Perforante,2,"0,9","Ligera, Sutil"
+Espada Larga,15 PO,1D8 Cortante,3,"1,4",Versatil (1D10)
+Espadon,50 PO,2D6 Cortante,6,"2,7","A dos Manos, pesado"
+Estoque,25 PO,1D8 Perforante,2,"0,9",Sutil
+Flagelo,10 PO ,1D8 Contundente,2,"0,9",
+Hacha a dos Manos,30 PO,1D12 Cortante,7,"3,2","A dos Manos, pesada"
+Hacha de Guerra,10 PO,1D8 Cortante,4,"1,8",Versatil (1D10)
+Lucero del Alba,15 PO,1D8 Perforante,4,"1,8",
+Martillo de Guerra,15 PO,1D8 Contundente,2,"0,9",Versatil (1D10)
+Maza a dos Manos,10 PO,2D6 Contundente,10,"4,5","A dos Manos, pesada"
+Tridente,5 PO,1D6 Perforante,4,"1,8","Arrojadizo (alcance 20/60), Versatil (1D8)"
+Armas a Distancia Marciales,,,,,
+Arco Largo,50 PO,1D8 Perforante,2,"0,9","A dos manos, municion (alcance 150/600), pesado"
+Ballesta de Mano,75 PO,1D6 Perforante,3,"1,4","Ligera, municion (alcance 30/120), recarga"
+Ballesta Pesada,50 PO,1D10 Perforante,18,"8,2","A dos manos, municion (alcance 100/400), pesada, recarga"
