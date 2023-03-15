@@ -116,6 +116,13 @@ botonCompras.addEventListener('click', ()=>{
             }
         }
         actualizar()
+        lienzo.innerHTML = ''
+        base = 0 
+        for(moneda in total){
+            total[moneda]=0
+            subtotal = document.getElementById(moneda)
+            subtotal.innerHTML = 0
+        }
         aviso.innerHTML= 'Transaccion terminada'
     }
 })
