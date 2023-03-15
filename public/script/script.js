@@ -3,6 +3,8 @@ var armadura_ligera = document.querySelectorAll('#liviana p')
 const botonArmadura = document.getElementsByName('armadura')
 const lienzo = document.querySelector('#carrito')
 const jugadores = document.querySelectorAll('#personajes input')
+const botonCompras = document.getElementById('botonCompra')
+const comprador = document.getElementById('comprador')
 let n
 let p
 let base = 0
@@ -76,7 +78,8 @@ jugadores.forEach((i)=>{
     i.addEventListener('change',(radio)=>{
         if (i.checked){
             billeteraActiva = listaJugadores[i.id]
-            console.log(billeteraActiva)
+            comprador.innerText = `${i.id}`
+            console.log(comprador)
         }
     })
 })
