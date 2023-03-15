@@ -21,13 +21,13 @@
             <div class="bg-red-200 h-full w-full p-2">
                 <h3>La Party</h3>
                 <div class="w-full flex flex-col" id="personajes">
-                    <input class="hidden peer/nahala" type="radio" name="miembro" id="nahala">
-                    <label for="nahala" class="bg-blue-900 mt-2 peer-checked/nahala:bg-cyan-400 peer-checked/nahala:border-4 peer-checked/nahala:border-yellow-50 ">
+                    <input class="hidden peer/nhala" type="radio" name="miembro" id="nhala">
+                    <label for="nhala" class="bg-blue-900 mt-2 peer-checked/nhala:bg-cyan-400 peer-checked/nhala:border-4 peer-checked/nhala:border-yellow-50 ">
                         <div class= "w-full h-44 flex flex-col">
-                            <div class="w-full h-3/4 bg-nahala bg-cover"></div>
+                            <div class="w-full h-3/4 bg-nhala bg-cover"></div>
                             <div class="text-xs px-1">
                                 <p class="text-base text-center">Nahala</p>
-                                <span id="billetera-nahala"></span>
+                                <span id="billetera-nhala"></span>
                             </div>
                         </div>
                     </label>
@@ -87,8 +87,8 @@
             </div>
             <div class="bg-blue-300 h-full w-full">
                 lista carrito
-                <div id="carrito">
-
+                <div id="carrito" class="">
+                    
                 </div>
                 <span>Total: </span>
                 <p id="subtotal">PP:<span id="PP">0</span> PO:<span id="PO">0</span> PT:<span id="PT"></span> PC:<span id="PC">0</span></p>
@@ -106,23 +106,21 @@
                     <p>Liviana</p>
                     <div id="liviana" class="contenedor">
                         <div class="grid grid-flow-row grid-cols-3 items-center justify-items-center shadow-lg mb-2 rounded-md">
-                            <!--<img src="/src/svg/cloth-fabric-svgrepo-com.svg" alt="svg de pluma" srcset="" class="row-span-2 p-2">-->
                             <div class="bg-cuero row-span-3 h-24 w-full bg-cover rounded-l-md"></div>
-                            <p class="col-span-2" name="cueroTitulo" id="Armadura de cuero">Armadura de Cuero</p>
+                            <p class="col-span-2" name="cueroTitulo">Armadura de Cuero</p>
                             <div><span>desventaja: </span><span>X</span></div> 
                             <div><span>AC: </span><span>11+DEX</span></div>                            
                             <p name="cueroPrecio">PO: 10</p>
-                            <button class="bg-red-300 py-1 px-2 rounded-md" name="aLigera" id="cuero">Añadir</button>
+                            <button class="bg-red-300 py-1 px-2 rounded-md" name="armadura" id="cuero">Añadir</button>
                         </div>
 
                         <div class="grid grid-flow-row grid-cols-3 items-center justify-items-center shadow-lg mb-2 rounded-md">
-                            <!--<img src="/src/svg/cloth-fabric-svgrepo-com.svg" alt="svg de pluma" srcset="" class="row-span-2 p-2">-->
                             <div class="bg-cuerot row-span-3 h-24 w-full bg-cover rounded-l-md"></div>
-                            <p class="col-span-2">Cuero Tachonado</p>
+                            <p class="col-span-2" name="cuerontTitulo">Cuero Tachonado</p>
                             <div><span>desventaja: </span><span>X</span></div> 
                             <div><span>AC: </span><span>12+DEX</span></div>                            
-                            <p> <span>PO: 40</span></p>
-                            <button class="bg-red-300 py-1 px-2 rounded-md" name="aLigera">Añadir</button>
+                            <p name="cuerontPrecio">PO: 40</p>
+                            <button class="bg-red-300 py-1 px-2 rounded-md" name="armadura" id="cueront">Añadir</button>
                         </div>
                 </div>
                 <p>Media</p>
