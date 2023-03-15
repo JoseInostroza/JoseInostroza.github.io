@@ -1,13 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./public/index.html", "./src/**/*.{html,js}"],
+  content: ["public/index.html"],
   theme: {
     extend: {
-      backgroundColor:{
-        complementary : '#FF7777'
-      },
       backgroundImage: {
-        'nahala' : "URL(/src/img/nahala.jpg)",
+        'nhala' : "URL(/src/img/nahala.jpg)",
         'kroz' : "URL(/src/img/kroz.jpg)",
         'dove' : "URL(/src/img/dove.jpg)",
         'layka' : "URL(/src/img/trini.jpg)",
