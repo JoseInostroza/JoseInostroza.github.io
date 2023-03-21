@@ -12,7 +12,7 @@ let base = 0
 let billeteraActiva
 var creditoDisponible = 0
 let total = {'PP':0,'PO':0,'PT':0,'PC':0};
-const listaJugadores = {'nhala':{'PP':0,'PO':15,'PT':0,'PC':0},'kroz':{'PP':0,'PO':2,'PT':0,'PC':0},'dove':{'PP':0,'PO':7,'PT':0,'PC':0},'layka':{'PP':0,'PO':25,'PT':0,'PC':0},'gasef':{'PP':0,'PO':7,'PT':0,'PC':0},'sou-ken':{'PP':0,'PO':10,'PT':0,'PC':0},}
+const listaJugadores = {'nhala':{'PP':0,'PO':15,'PT':0,'PC':0},'kroz':{'PP':0,'PO':2,'PT':0,'PC':0},'dove':{'PP':0,'PO':7,'PT':0,'PC':0},'layka':{'PP':0,'PO':24,'PT':9,'PC':0},'gasef':{'PP':0,'PO':7,'PT':0,'PC':0},'sou-ken':{'PP':19,'PO':30,'PT':0,'PC':0},}
 let jugadorActivo
 
 function baseC(m,c){
