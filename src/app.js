@@ -1,3 +1,9 @@
 import express from "express"
 
-const app = express()
+const app = express();
+
+app.get(["/", "/home"],()=>{
+    
+})
+
+export default app
