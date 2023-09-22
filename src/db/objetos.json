@@ -1,0 +1,489 @@
+{
+    "armaduras":
+        {
+            "ligeras":[
+                {
+                    "nombre":"Cuero",
+                    "precio":[10,"PO"],
+                    "modificador":"11 + DEX",
+                    "desventaja":"False",
+                    "requerimiento":0,
+                    "habilidad":"",
+                    "img":"URL"
+                },
+                {
+                    "nombre":"Cuero Tachonado",
+                    "precio":[45,"PO"],
+                    "modificador":"12 + DEX",
+                    "desventaja":"False",
+                    "habilidad":"",
+                    "requerimiento":0,
+                    "img":"URL"
+                }
+            ],
+            "medias":[
+                {
+                    "nombre":"Pieles",
+                    "precio":[10, "PO"],
+                    "modificador":"12 + DEX",
+                    "desventaja":"False",
+                    "habilidad":"",
+                    "requerimiento":0,
+                    "img":"URL"
+                },
+                {
+                    "nombre":"Camisa de Malla",
+                    "precio":[50,"PO"],
+                    "modificador":"13 + DEX",
+                    "desventaja":"False",
+                    "habilidad":"",
+                    "requerimiento":0,
+                    "img":"URL"
+                },
+                {
+                    "nombre":"Cota de Escamas",
+                    "precio":[50, "PO"],
+                    "modificador":"14 + DEX",
+                    "desventaja":"True",
+                    "habilidad":"",
+                    "requerimiento":0,
+                    "img":"URL"
+                },
+                {
+                    "nombre":"Coraza",
+                    "precio":[400, "PO"],
+                    "modificador":"14 + DEX",
+                    "desventaja":"False",
+                    "habilidad":"",
+                    "requerimiento":0,
+                    "img":"URL"
+                },
+                {
+                    "nombre":"Media Armadura",
+                    "precio":[750, "PO"],
+                    "modificador":"15 + DEX",
+                    "desventaja":"True",
+                    "habilidad":"",
+                    "requerimiento":0,
+                    "img":"URL"
+                }
+            ],
+            "pesadas":[
+                {
+                    "nombre":"Cota Guarnecida",
+                    "precio":[30, "PO"],
+                    "modificador":"14",
+                    "desventaja":"True",
+                    "habilidad":"",
+                    "requerimiento":0,
+                    "img":"URL"
+                },
+                {
+                    "nombre":"Cota de Malla",
+                    "precio":[75, "PO"],
+                    "modificador":"16",
+                    "desventaja":"True",
+                    "habilidad":"",
+                    "requerimiento":13,
+                    "img":"URL"
+                },
+                {
+                    "nombre":"Armadura de Bandas",
+                    "precio":[200, "PO"],
+                    "modificador":"17",
+                    "desventaja":"True",
+                    "habilidad":"",
+                    "requerimiento":15,
+                    "img":"URL"
+                },{
+                    "nombre":"Armadura de Placas",
+                    "precio":[1500, "PO"],
+                    "modificador":"18",
+                    "desventaja":"True",
+                    "habilidad":"",
+                    "requerimiento":15,
+                    "img":"URL"
+                }
+            ]
+
+        },
+    "escudos":
+        [
+            {
+                "nombre":"Escudo Estandar",
+                "precio":[10, "PO"],
+                "modificador":"2",
+                "desventaja":"False",
+                "habilidad":"",
+                "requerimiento":0,
+                "img":"URL"
+            },
+            {
+                "nombre":"Escudo Grande",
+                "precio":[50, "PO"],
+                "modificador":"4",
+                "desventaja":"True",
+                "habilidad":"",
+                "requerimiento":15,
+                "img":"URL"
+            }
+        ],
+    "armas":{
+        "CCS":[
+            {
+                "nombre":"Baston",
+                "precio":[0.2, "PO"],
+                "daño":"1d6 contundente",
+                "propiedades":["versatil : 1d8"],
+                "habilidad":"",
+                "img":"URL"
+            },
+            {
+                "nombre":"Daga",
+                "precio":[2, "PO"],
+                "daño":"1d4 perforante",
+                "propiedades":["arrojadiza: 20/60", "ligera", "sutil"],
+                "habilidad":"",
+                "img":"URL"
+            },
+            {
+                "nombre":"Garrote",
+                "precio":[0.1, "PO"],
+                "daño":"1d4 contundente",
+                "propiedades":["ligero"],
+                "habilidad":"",
+                "img":"URL"
+            },
+            {
+                "nombre":"Garrote Grande",
+                "precio":[0.2, "PO"],
+                "daño":"1d8 contundente",
+                "propiedades":["a dos manos"],
+                "habilidad":"",
+                "img":"URL"
+            },
+            {
+                "nombre":"Hacha de Mano",
+                "precio":[5, "PO"],
+                "daño":"1d6 cortante",
+                "propiedades":["arrojadiza: 20/60","versatil : 1d8"],
+                "habilidad":"",
+                "img":"URL"
+            },
+            {
+                "nombre":"Jabalina",
+                "precio":[0.5, "PO"],
+                "daño":"1d6 perforante",
+                "propiedades":["arrojadiza: 30/120"],
+                "habilidad":"",
+                "img":"URL"
+            },
+            {
+                "nombre":"Lanza",
+                "precio":[1, "PO"],
+                "daño":"1d6 perforante",
+                "propiedades":["arrojadiza: 20/60", "versatil : 1d8"],
+                "habilidad":"",
+                "img":"URL"
+            },
+            {
+                "nombre":"Martillo Ligero",
+                "precio":[2, "PO"],
+                "daño":"1d4 contundente",
+                "propiedades":["arrojadiza: 20/60","ligera"],
+                "habilidad":"",
+                "img":"URL"
+            },
+            {
+                "nombre":"Maza",
+                "precio":[5, "PO"],
+                "daño":"1d6 contundente",
+                "propiedades":[],
+                "habilidad":"",
+                "img":"URL"
+            }
+        ],
+        "DS":[
+            {
+                "nombre":"Arco Corto",
+                "precio":[25, "PO"],
+                "daño":"1d6 perforante",
+                "propiedades":["a dos manos","municion", "alcance 80/320"],
+                "habilidad":"",
+                "img":"URL"
+            },
+            {
+                "nombre":"Ballesta",
+                "precio":[25, "PO"],
+                "daño":"1d8 perforante",
+                "propiedades":["a dos manos","municion","alcance 80/320","recarga"],
+                "habilidad":"",
+                "img":"URL"
+            },
+            {
+                "nombre":"Dardo",
+                "precio":[0.05, "PO"],
+                "daño":"1d4 perforante",
+                "propiedades":["arrojadiza: 20/60","sutil"],
+                "habilidad":"",
+                "img":"URL"
+            },
+            {
+                "nombre":"Honda",
+                "precio":[0.1, "PO"],
+                "daño":"1d4 contundente",
+                "propiedades":["municion","alcance 30/120"],
+                "habilidad":"",
+                "img":"URL"
+            }
+        ],
+        "CCM":[
+            {
+                "nombre":"Alabarda",
+                "precio":[20, "PO"],
+                "daño":"1d10 cortante",
+                "propiedades":["a dos manos","gran alcance","pesada"],
+                "habilidad":"",
+                "img":"URL"
+            },
+            {
+                "nombre":"Cimitarra",
+                "precio":[25, "PO"],
+                "daño":"1d6 cortante",
+                "propiedades":["ligera","sutil"],
+                "habilidad":"",
+                "img":"URL"
+            },
+            {
+                "nombre":"Espada Corta",
+                "precio":[10, "PO"],
+                "daño":"1d6 perforante",
+                "propiedades":["ligera","sutil"],
+                "habilidad":"",
+                "img":"URL"
+            },
+            {
+                "nombre":"Espada Larga",
+                "precio":[15, "PO"],
+                "daño":"1d8 cortante",
+                "propiedades":["versatil : 1d10"],
+                "habilidad":"",
+                "img":"URL"
+            },
+            {
+                "nombre":"Espadon",
+                "precio":[50, "PO"],
+                "daño":"2d6 cortante",
+                "propiedades":["a dos manos","pesado"],
+                "habilidad":"",
+                "img":"URL"
+            },
+            {
+                "nombre":"Estoque",
+                "precio":[25, "PO"],
+                "daño":"1d8 perforante",
+                "propiedades":["sutil"],
+                "habilidad":"",
+                "img":"URL"
+            },
+            {
+                "nombre":"Flagelo",
+                "precio":[10, "PO"],
+                "daño":"1d8 contundente",
+                "propiedades":[],
+                "habilidad":"",
+                "img":"URL"
+            },
+            {
+                "nombre":"Hacha a dos Manos",
+                "precio":[30, "PO"],
+                "daño":"1d12 cortante",
+                "propiedades":["a dos manos","pesada"],
+                "habilidad":"",
+                "img":"URL"
+            },
+            {
+                "nombre":"Hacha de Guerra",
+                "precio":[10, "PO"],
+                "daño":"1d8 cortante",
+                "propiedades":["versatil : 1d10"],
+                "habilidad":"",
+                "img":"URL"
+            },
+            {
+                "nombre":"Lucero del Alba",
+                "precio":[15, "PO"],
+                "daño":"1d8 perforante",
+                "propiedades":[],
+                "habilidad":"",
+                "img":"URL"
+            },
+            {
+                "nombre":"Martillo de Guerra",
+                "precio":[15, "PO"],
+                "daño":"1d8 contundente",
+                "propiedades":["versatil : 1d10"],
+                "habilidad":"",
+                "img":"URL"
+            },
+            {
+                "nombre":"Maza a dos Manos",
+                "precio":[10, "PO"],
+                "daño":"2d6 contundente",
+                "propiedades":["a dos manos","pesada"],
+                "habilidad":"",
+                "img":"URL"
+            },
+            {
+                "nombre":"Tridente",
+                "precio":[5, "PO"],
+                "daño":"1d6 perforante",
+                "propiedades":["arrojadiza: 20/60","versatil : 1d8"],
+                "habilidad":"",
+                "img":"URL"
+            }
+        ],
+        "DM":[
+            {
+                "nombre":"Arco Largo",
+                "precio":[50, "PO"],
+                "daño":"1d8 perforante",
+                "propiedades":["a dos manos","municion", "alcance 150/600","pesado"],
+                "habilidad":"",
+                "img":"URL"
+            },
+            {
+                "nombre":"Ballesta de Mano",
+                "precio":[75, "PO"],
+                "daño":"1d6 perforante",
+                "propiedades":["ligera","municion","alcance 30/120","recarga"],
+                "habilidad":"",
+                "img":"URL"
+            },
+            {
+                "nombre":"Ballesta Pesada",
+                "precio":[50, "PO"],
+                "daño":"1d10 perforante",
+                "propiedades":["a dos manos","municion", "alcance 100/400","pesada","recarga"],
+                "habilidad":"",
+                "img":"URL"
+            }
+        ]
+    },
+    "comidas y posada":{
+        "bebidas":[
+            {
+                "nombre":"Cerveza",
+                "formato":[{"jarra":[0.04, "PO"]},{"galon":[0.2,"PO"]}]
+            },
+            {
+                "nombre":"Vino",
+                "formato":[{"jarra":[0.2, "PO"]},{"botella":[10,"PO"]}]
+            }
+        ],
+        "comida por dia":
+        {
+            "miserable": [0.03, "PO"],
+            "pobre":[0.06, "PO"],
+            "modesta": [0.3,"PO"],
+            "copiosa":[0.5,"PO"],
+            "lujosa":[0.8,"PO"],
+            "aristocratica":[5,"PO"]
+        },
+        "posada":
+        {
+            "miserable": [0.07, "PO"],
+            "pobre":[0.1, "PO"],
+            "modesta": [0.5,"PO"],
+            "comoda":[0.8,"PO"],
+            "lujosa":[2,"PO"],
+            "aristocratica":[4,"PO"]
+        }
+    },
+    "equipamiento":[
+        {"Abaco":[2, "PO"]},
+        {"Frasco de Aceite":[0.1,"PO"]},
+        {"Frasco de Agua Bendita":[25, "PO"]},
+        {"Aljaba":[1, "PO"]},
+        {"Anillo de Sellar":[5, "PO"]},
+        {"Antorcha":[0.01, "PO"]},
+        {"Barril":[2,"PO"]},
+        {"Bolas de Metal Bolsa de 1000":[1,"PO"]},
+        {"Bolsa":[0.1,"PO"]},
+        {"Botella de Cristal":[2,"PO"]},
+        {"Campana":[1,"PO"]},
+        {"Cantimplora":[0.2,"PO"]},
+        {"Cerradura":[10,"PO"]},
+        {"Cesta":[0.4,"PO"]},
+        {"Cofre":[5,"PO"]},
+        {"Cubo":[0.05,"PO"]},
+        {"50 pies de Cuerda de Cañamo":[1,"PO"]},
+        {"50 pies Cuerda de Seda":[10,"PO"]},
+        {"10 pies de Escalera":[0.1,"PO"]},
+        {"Espejito de Acero":[5,"PO"]},
+        {"Estuche para Mapa o Pergamino":[1,"PO"]},
+        {"Estuche para Virotes de Ballesta":[1,"PO"]},
+        {"Lacre":[0.5,"PO"]},
+        {"Lampara":[0.5,"PO"]},
+        {"Libro":[25,"PO"]},
+        {"Libro de Conjuros":[50,"PO"]},
+        {"Linterna de Ojo de Buey":[10,"PO"]},
+        {"Linterna Sorda":[5,"PO"]},
+        {"Manta":[0.5,"PO"]},
+        {"Martillo":[1,"PO"]},
+        {"Mochila":[2,"PO"]},
+        {"Pala":[2,"PO"]},
+        {"Palanqueta":[2,"PO"]},
+        {"unn hoja de Papel":[0.2,"PO"]},
+        {"Vial de Perfume":[5,"PO"]},
+        {"una hoja de Pergamino":[0.1,"PO"]},
+        {"Petate":[1,"PO"]},
+        {"Pico Minero":[2,"PO"]},
+        {"Piedra de Afilar":[0.01,"PO"]},
+        {"10 Pinchos de Hierro":[1,"PO"]},
+        {"Piton":[0.05,"PO"]},
+        {"Pluma":[0.02,"PO"]},
+        {"Pocion de Curacion":[50,"PO"]},
+        {"Raciones":[0.5,"PO"]},
+        {"Reloj de Arena":[25,"PO"]},
+        {"Ropas Comunes":[0.5,"PO"]},
+        {"Ropas de Calidad":[15,"PO"]},
+        {"Ropas de Viaje":[2,"PO"]},
+        {"Disfraz":[5,"PO"]},
+        {"Saco":[0.01,"PO"]},
+        {"Silla de Montar":[10,"PO"]},
+        {"Tieda para dos Personas":[2,"PO"]},
+        {"1 oz de Tinta":[10,"PO"]},
+        {"Trozo de Tiza":[0.01,"PO"]},
+        {"Tunica":[1,"PO"]},
+        {"Utensilios de Cocina":[0.2,"PO"]},
+        {"Utiles de Sanador":[5,"PO"]},
+        {"Utiles para Disfrazarse":[25,"PO"]},
+        {"Vara de 10 pies":[0.05,"PO"]},
+        {"Vela":[0.01,"PO"]},
+        {"Yesquero":[0.5,"PO"]},
+        {"Baston Arcano":[5,"PO"]},
+        {"Cristal Arcano":[10,"PO"]},
+        {"Orbe Arcano":[20,"PO"]},
+        {"Vara Arcana":[10,"PO"]},
+        {"Varita Arcana":[10,"PO"]},
+        {"Cuerno":[3,"PO"]},
+        {"Flauta":[2,"PO"]},
+        {"Flauta de Pan":[12,"PO"]},
+        {"Gaita":[30,"PO"]},
+        {"Laud":[35,"PO"]},
+        {"Lira":[30,"PO"]},
+        {"Tambor":[6,"PO"]},
+        {"Ajedrez":[1,"PO"]},
+        {"Apuesta de los Tres Dragones":[1,"PO"]},
+        {"Dados":[0.1,"PO"]},
+        {"Cartas":[0.5,"PO"]},
+        {"20 Balas de Honda":[0.04,"PO"]},
+        {"20 Flechas":[1,"PO"]},
+        {"20 Virotes de Ballesta":[1,"PO"]},
+        {"Amuleto Sagrado":[5,"PO"]},
+        {"Emblema Sagrado":[5,"PO"]},
+        {"Relicario Sagrado":[5,"PO"]}
+
+    ]
+}
