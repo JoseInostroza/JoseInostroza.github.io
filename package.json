@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "tw": "tailwindcss -i ./src/css/style.css -o ./public/css/style.css --watch"
   },
   "author": "PepeDEV",
   "license": "ISC",
@@ -19,7 +20,8 @@
     "uuid": "^9.0.0"
   },
   "devDependencies": {
-    "nodemon": "^3.0.1"
+    "nodemon": "^3.0.1",
+    "tailwindcss": "^3.3.3"
   },
   "repository": {
     "type": "git",

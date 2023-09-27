@@ -22,7 +22,7 @@ app.use(cors());
 app.use(upload()); //procesar form data
 //config public
 
-app.use("/public", express.static("public"));
+app.use(express.static(__dirname + "/public"));
 
 //config express handlebars
 
@@ -33,6 +33,8 @@ const hbs = create({
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 app.set("views", path.resolve(__dirname, "./views"));
+
+//configurando tailwind
 
 //Uso de Vistas
 app.use("/", viewRoutes);

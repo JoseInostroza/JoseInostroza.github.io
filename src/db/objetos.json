@@ -485,5 +485,13 @@
         {"Emblema Sagrado":[5,"PO"]},
         {"Relicario Sagrado":[5,"PO"]}
 
-    ]
+    ],
+    "jugadores":{
+        "jugador1":{
+            "platino":10,
+            "oro":10,
+            "plata":10,
+            "cobre":10
+        }
+    }
 }
