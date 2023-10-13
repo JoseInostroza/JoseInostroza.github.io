@@ -37,7 +37,18 @@ app.set("views", path.resolve(__dirname, "./views"));
 //configurando tailwind
 
 //Uso de Vistas
+//home
 app.use("/", viewRoutes);
+//main
+app.use("/main", viewRoutes)
+//tienda
+app.use("/tienda", viewRoutes)
+//taberna
+app.use("/taberna", viewRoutes)
+//rejistro personajes
+app.use("/registro", viewRoutes)
+//ayuda
+app.use("/ayuda", viewRoutes)
 
 //VISTA error
 app.get("*", (req, res) => {

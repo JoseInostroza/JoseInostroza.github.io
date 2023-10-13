@@ -2,16 +2,20 @@ export const home = (req, res) => {
         res.render("home");  
 }
 
-export const registroPJ = (req, res) => {
-        res.render("registerCharacter");  
+export const registroPersonaje = (req, res) => {
+        res.render("registroPersonaje");  
 }
 
-export const armaduras = (req, res) => {
-        res.render("principal");  
+export const main = (req, res) => {
+        res.render("main");  
 }
-export const armas = (req, res) => {
-        res.render("principal");  
+export const tienda = (req, res) => {
+        res.render("tiendas");  
 }
-export const varios = (req, res) => {
-        res.render("principal");  
+export const taberna = (req, res) => {
+        res.render("taberna");  
+}
+
+export const ayuda = (req, res) => {
+        res.render("ayuda");  
 }
