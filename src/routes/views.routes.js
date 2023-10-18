@@ -5,9 +5,9 @@ const router = Router();
 //Vista pricipal
 router.get("/", viewController.home)
 
-router.get("/tienda", viewController.tienda)
+router.get("/tienda", viewController.listaTiendas)
 
-router.get("/registro", viewController.registroPersonaje)
+router.get("/registro", viewController.listaPersonajes)
 
 router.get("/main", viewController.main)
 
