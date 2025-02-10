@@ -3,49 +3,161 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portafolio de PepeDev</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>PepeDev</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <header>
-    <h1>PepeDev</h1>
-    <p>Desarrollador web Full-Stack, orientado al desarrollo backend, que aspira a crear juegos y experiencias interactivas en el mundo de la educacion</p>
-    <nav>
-      <ul>
-        <li><a href="#about">Sobre Mí</a></li>
-        <li><a href="#portfolio">Proyectos</a></li>
-        <li><a href="#contact">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <section id="about">
-    <h2>Sobre Mí</h2>
-    <p>Hola, soy PepeDev y me apasiona crear soluciones tecnológicas...</p>
-  </section>
-
-  <section id="portfolio">
-    <h2>Proyectos</h2>
-    <div class="project">
-      <h3>Proyecto 1</h3>
-      <p>Descripción breve del proyecto.</p>
-      <a href="#">Ver más</a>
+<body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+  <!-- Header / Navegación -->
+  <nav class="fixed w-full bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm z-50 shadow-sm">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="#" class="text-2xl font-bold text-gray-800 dark:text-white">
+        PepeDev
+      </a>
+      <div class="hidden md:flex space-x-8">
+        <a href="#about" class="text-gray-600 dark:text-gray-300 hover:text-blue-500">Sobre mí</a>
+        <a href="#projects" class="text-gray-600 dark:text-gray-300 hover:text-blue-500">Proyectos</a>
+        <a href="#contact" class="text-gray-600 dark:text-gray-300 hover:text-blue-500">Contacto</a>
+      </div>
+      <button id="darkModeToggle" class="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">
+        🌓
+      </button>
     </div>
-    <!-- Repite para otros proyectos -->
+  </nav>
+
+  <!-- Sección Hero -->
+  <section class="min-h-screen flex items-center justify-center text-center px-6">
+    <div class="max-w-4xl mx-auto">
+      <h1 class="text-5xl md:text-6xl font-bold text-gray-800 dark:text-white mb-6">
+        Hola, soy <span class="text-blue-500">PepeDev</span>
+      </h1>
+      <p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
+        Desarrollador Full-Stack apasionado por crear soluciones innovadoras.
+      </p>
+      <a href="#projects" class="bg-blue-500 text-white px-8 py-3 rounded-lg hover:bg-blue-600 transition">
+        Ver proyectos
+      </a>
+    </div>
   </section>
 
-  <section id="contact">
-    <h2>Contacto</h2>
-    <form>
-      <input type="text" placeholder="Nombre" required>
-      <input type="email" placeholder="Correo electrónico" required>
-      <textarea placeholder="Mensaje" required></textarea>
-      <button type="submit">Enviar</button>
-    </form>
+  <!-- Sección Sobre Mí -->
+  <section id="about" class="py-20 bg-white dark:bg-gray-800">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-12 text-center">Sobre mí</h2>
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div class="space-y-4">
+          <p class="text-gray-600 dark:text-gray-300">
+            Soy un desarrollador con [X años] de experiencia en [tecnologías clave]. Me especializo en...
+          </p>
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">JavaScript</span>
+            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">React</span>
+            <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm">Node.js</span>
+            <!-- Añade más habilidades -->
+          </div>
+        </div>
+        <div class="flex justify-center">
+          <img 
+            src="[URL-de-tu-foto]" 
+            alt="Foto de perfil" 
+            class="w-64 h-64 rounded-full object-cover shadow-lg"
+          >
+        </div>
+      </div>
+    </div>
   </section>
 
-  <footer>
-    <p>&copy; 2023 PepeDev</p>
+  <!-- Sección Proyectos -->
+  <section id="projects" class="py-20 bg-gray-50 dark:bg-gray-900">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-12 text-center">Proyectos</h2>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Proyecto 1 -->
+        <div class="bg-white dark:bg-gray-800 rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow">
+          <img 
+            src="[URL-imagen-proyecto]" 
+            alt="Proyecto 1" 
+            class="w-full h-48 object-cover rounded-lg mb-4"
+          >
+          <h3 class="text-xl font-bold text-gray-800 dark:text-white mb-2">Nombre del Proyecto</h3>
+          <p class="text-gray-600 dark:text-gray-300 mb-4">Breve descripción del proyecto y su funcionalidad.</p>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 px-2 py-1 rounded text-sm">
+              React
+            </span>
+            <!-- Añade más tecnologías -->
+          </div>
+          <a 
+            href="#" 
+            class="text-blue-500 hover:text-blue-600 flex items-center gap-1"
+          >
+            Ver código ↗
+          </a>
+        </div>
+        <!-- Repite para más proyectos -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Contacto -->
+  <section id="contact" class="py-20 bg-white dark:bg-gray-800">
+    <div class="container mx-auto px-6 max-w-2xl">
+      <h2 class="text-3xl font-bold text-gray-800 dark:text-white mb-12 text-center">Contacto</h2>
+      <form class="space-y-6">
+        <div>
+          <input 
+            type="text" 
+            placeholder="Nombre" 
+            class="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-600 bg-transparent focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
+        </div>
+        <div>
+          <input 
+            type="email" 
+            placeholder="Correo electrónico" 
+            class="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-600 bg-transparent focus:outline-none focus:ring-2 focus:ring-blue-500"
+          >
+        </div>
+        <div>
+          <textarea 
+            rows="5" 
+            placeholder="Mensaje" 
+            class="w-full px-4 py-3 rounded-lg border border-gray-200 dark:border-gray-600 bg-transparent focus:outline-none focus:ring-2 focus:ring-blue-500"
+          ></textarea>
+        </div>
+        <button 
+          type="submit" 
+          class="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 transition"
+        >
+          Enviar mensaje
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-100 dark:bg-gray-800 py-8">
+    <div class="container mx-auto px-6 text-center">
+      <div class="flex justify-center space-x-6 mb-4">
+        <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-blue-500">GitHub</a>
+        <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-blue-500">LinkedIn</a>
+        <a href="#" class="text-gray-600 dark:text-gray-300 hover:text-blue-500">Twitter</a>
+      </div>
+      <p class="text-gray-600 dark:text-gray-300">&copy; 2023 PepeDev. Todos los derechos reservados.</p>
+    </div>
   </footer>
+
+  <!-- Script para el Dark Mode -->
+  <script>
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    const html = document.documentElement;
+
+    darkModeToggle.addEventListener('click', () => {
+      html.classList.toggle('dark');
+      localStorage.theme = html.classList.contains('dark') ? 'dark' : 'light';
+    });
+
+    // Cargar tema guardado
+    if (localStorage.theme === 'dark') html.classList.add('dark');
+  </script>
 </body>
 </html>
