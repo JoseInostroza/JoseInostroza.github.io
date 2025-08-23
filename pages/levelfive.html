@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Levelfive| Obras civiles, estructuras metálicas y diseño de ambientes</title>
+  <meta name="description" content="Empresa de gestión y construcción: obras civiles, estructuras metálicas (industrial y logística) y diseño de ambientes y paisajismo. Cotiza tu proyecto hoy." />
+  <style>
+    :root{
+      --bg: #0f172a;          /* slate-900 */
+      --fg: #e5e7eb;          /* gray-200 */
+      --muted: #94a3b8;       /* slate-400 */
+      --card: #111827;        /* gray-900 */
+      --accent: #f59e0b;      /* amber-500 */
+      --line: #1f2937;        /* gray-800 */
+      --surface: #0b1221;     /* deep */
+      --white: #ffffff;
+      --maxw: 1200px;
+      --radius: 14px;
+      --shadow: 0 8px 24px rgba(0,0,0,.25);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";line-height:1.5}
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+    .grid{display:grid;gap:24px}
+    header{position:sticky;top:0;z-index:50;background:linear-gradient(180deg, rgba(15,23,42,.9), rgba(15,23,42,.6));backdrop-filter: blur(8px);border-bottom:1px solid var(--line)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;gap:12px;align-items:center;font-weight:700;letter-spacing:.3px}
+    .brand .logo{width:36px;height:36px;border-radius:8px;background:conic-gradient(from 30deg, var(--accent), #ffd166, var(--accent));box-shadow:0 0 0 2px rgba(245,158,11,.35)}
+    .nav a{font-size:14px;color:var(--fg);opacity:.9}
+    .nav .links{display:flex;gap:18px;align-items:center}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:10px;border:1px solid rgba(245,158,11,.4);background:var(--accent);color:#1a1a1a;font-weight:700;box-shadow:var(--shadow)}
+    .btn--ghost{background:transparent;color:var(--fg);border:1px solid var(--line);box-shadow:none}
+
+    /* Hero */
+    .hero{position:relative;isolation:isolate}
+    .hero::before{content:"";position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;opacity:.35;z-index:-2}
+    .hero::after{content:"";position:absolute;inset:0;background:radial-gradient(1200px 600px at 20% 10%, rgba(245,158,11,.25), transparent 60%), linear-gradient(180deg, rgba(15,23,42,.3), var(--bg));z-index:-1}
+    .hero .wrap{padding:88px 0 56px}
+    .kpis{display:flex;gap:18px;flex-wrap:wrap;margin-top:18px}
+    .kpi{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);padding:10px 14px;border-radius:999px;font-size:13px}
+
+    /* Sections */
+    section{padding:56px 0;border-top:1px solid var(--line)}
+    h2{margin:0 0 16px;font-size:32px;letter-spacing:.3px}
+    p.lead{color:var(--muted);max-width:70ch}
+    .cards{display:grid;grid-template-columns:repeat(12,1fr);gap:20px}
+    .card{grid-column:span 12;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+    .card h3{margin:0 0 8px}
+    .card .meta{color:var(--muted);font-size:14px}
+
+    /* Services */
+    .service{display:flex;gap:16px;align-items:flex-start}
+    .service .icon{flex:0 0 44px;height:44px;border-radius:10px;background:rgba(245,158,11,.15);display:grid;place-items:center;border:1px solid rgba(245,158,11,.35)}
+    .bullets{margin:8px 0 0;padding-left:20px;color:var(--muted)}
+
+    /* Projects */
+    .projects .grid3{display:grid;grid-template-columns:repeat(12,1fr);gap:20px}
+    .project{grid-column:span 12;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.04)}
+    .project img{aspect-ratio:4/3;object-fit:cover;width:100%}
+    .project .info{padding:14px 16px;display:flex;justify-content:space-between;align-items:center}
+    .tag{font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.18);color:var(--muted)}
+
+    /* Differentiators */
+    .badges{display:grid;grid-template-columns:repeat(12,1fr);gap:12px;margin-top:16px}
+    .badge{grid-column:span 12;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);padding:12px 14px;border-radius:12px}
+
+    /* Process */
+    .steps{display:grid;grid-template-columns:repeat(12,1fr);gap:14px;margin-top:10px}
+    .step{grid-column:span 12;border-left:3px solid var(--accent);padding:10px 14px;background:rgba(255,255,255,.04);border-radius:8px}
+
+    /* CTA band */
+    .cta{background:linear-gradient(90deg, rgba(245,158,11,.15), rgba(245,158,11,.05));border:1px solid rgba(245,158,11,.35);border-radius:16px;padding:22px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
+
+    /* Contact */
+    form{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+    label{font-size:14px;color:var(--muted)}
+    input,select,textarea{width:100%;padding:12px 12px;border-radius:10px;border:1px solid var(--line);background:#0b1221;color:var(--fg)}
+    textarea{min-height:120px}
+    .col-6{grid-column:span 12}
+    .col-12{grid-column:span 12}
+
+    /* Footer */
+    footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted)}
+
+    /* Responsive */
+    @media (min-width:700px){
+      .card{grid-column:span 6}
+      .project{grid-column:span 4}
+      .badge{grid-column:span 6}
+      .step{grid-column:span 6}
+      .col-6{grid-column:span 6}
+    }
+    @media (min-width:1024px){
+      .card{grid-column:span 4}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <div class="brand"><div class="logo" aria-hidden="true"></div>Levelfive</div>
+      <nav class="links" aria-label="principal">
+        <a href="#servicios">Servicios</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#diferenciadores">Por qué Levelfive</a>
+        <a href="#contacto">Contacto</a>
+        <a class="btn" href="#contacto">Solicitar presupuesto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" aria-label="Inicio">
+      <div class="container wrap">
+        <h1 style="font-size:44px;line-height:1.1;margin:0 0 10px">Gestión y Construcción que cumple</h1>
+        <p class="lead">Obras civiles, estructuras metálicas para el área industrial y logística, y diseño de ambientes y paisajismo. Plazos claros, seguridad en obra y terminaciones de alto estándar.</p>
+        <div style="display:flex;gap:12px;margin:18px 0 8px">
+          <a class="btn" href="#contacto">Solicitar presupuesto</a>
+          <a class="btn btn--ghost" href="#proyectos">Ver proyectos</a>
+        </div>
+        <div class="kpis">
+          <div class="kpi">+50 proyectos entregados</div>
+          <div class="kpi">Cobertura zona norte-centro</div>
+          <div class="kpi">Equipo con protocolos de seguridad</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios" aria-labelledby="servicios-title">
+      <div class="container">
+        <h2 id="servicios-title">Servicios</h2>
+        <p class="lead">Tres áreas que cubren el ciclo completo: diseño, construcción y soluciones industriales/logísticas.</p>
+        <div class="cards">
+          <article class="card service">
+            <div class="icon" aria-hidden="true">🏗️</div>
+            <div>
+              <h3>Obras civiles</h3>
+              <p class="meta">Arquitectura e interiores, construcción de viviendas y remodelaciones con terminaciones EIFS, marmolina y panel SIP.</p>
+              <ul class="bullets">
+                <li>Levantamiento y planimetría</li>
+                <li>Viviendas y remodelaciones</li>
+                <li>Terminaciones EIFS / marmolina / SIP</li>
+              </ul>
+            </div>
+          </article>
+          <article class="card service">
+            <div class="icon" aria-hidden="true">🏭</div>
+            <div>
+              <h3>Estructuras metálicas (industrial y logística)</h3>
+              <p class="meta">Galpones, revestimientos, cubiertas, racks selectivos y piezas especiales para centros de distribución.</p>
+              <ul class="bullets">
+                <li>Galpones y ampliaciones</li>
+                <li>Revestimientos y cubiertas</li>
+                <li>Racks selectivos y piezas a medida</li>
+              </ul>
+            </div>
+          </article>
+          <article class="card service">
+            <div class="icon" aria-hidden="true">🌿</div>
+            <div>
+              <h3>Diseño de ambientes y paisajismo</h3>
+              <p class="meta">Mobiliario a medida, ambientación y paisajismo para proyectos inmobiliarios y comerciales.</p>
+              <ul class="bullets">
+                <li>Mobiliario y terminaciones</li>
+                <li>Ambientación de espacios</li>
+                <li>Paisajismo y mantención</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROYECTOS -->
+    <section id="proyectos" class="projects" aria-labelledby="proyectos-title">
+      <div class="container">
+        <h2 id="proyectos-title">Proyectos destacados</h2>
+        <p class="lead">Casos reales con foco en resultados y cumplimiento.</p>
+        <div class="grid3">
+          <article class="project">
+            <img alt="Galpón industrial" src="/src/estructuras1.jpg" />
+            <div class="info">
+              <strong>Galpón industrial</strong>
+              <span class="tag">Estructuras</span>
+            </div>
+          </article>
+          <article class="project">
+            <img alt="Montaje de racks" src="/src/logistica.jpg" />
+            <div class="info">
+              <strong>Centro de distribución</strong>
+              <span class="tag">Logística</span>
+            </div>
+          </article>
+          <article class="project">
+            <img alt="Vivienda SIP" src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=1200&auto=format&fit=crop" />
+            <div class="info">
+              <strong>Vivienda panel SIP</strong>
+              <span class="tag">Obras civiles</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIFERENCIADORES -->
+    <section id="diferenciadores" aria-labelledby="diff-title">
+      <div class="container">
+        <h2 id="diff-title">Por qué elegir G&C</h2>
+        <div class="badges">
+          <div class="badge">✅ Cumplimiento de plazos</div>
+          <div class="badge">🦺 Seguridad y protocolos en obra</div>
+          <div class="badge">🛠️ Terminaciones de alto estándar</div>
+          <div class="badge">👷 Equipo experto multidisciplinario</div>
+          <div class="badge">🧰 Garantías y postventa</div>
+          <div class="badge">📈 Control de calidad y reportes</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROCESO -->
+    <section aria-labelledby="proc-title">
+      <div class="container">
+        <h2 id="proc-title">Nuestro proceso</h2>
+        <div class="steps">
+          <div class="step"><strong>1.</strong> Levantamiento y planimetría</div>
+          <div class="step"><strong>2.</strong> Presupuesto y cronograma</div>
+          <div class="step"><strong>3.</strong> Ejecución y control de avance</div>
+          <div class="step"><strong>4.</strong> Entrega y postventa</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CALIDAD/SEGURIDAD + CTA -->
+    <section aria-labelledby="cta-title">
+      <div class="container cta">
+        <div>
+          <h3 id="cta-title" style="margin:0 0 6px">¿Listo para empezar tu proyecto?</h3>
+          <p class="lead" style="margin:0">Agendemos una visita técnica o cotiza por WhatsApp.</p>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <a class="btn" href="#contacto">Solicitar presupuesto</a>
+          <a class="btn btn--ghost" href="https://wa.me/00000000000" aria-label="WhatsApp">Hablar por WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACTO -->
+    <section id="contacto" aria-labelledby="contacto-title">
+      <div class="container">
+        <h2 id="contacto-title">Contacto</h2>
+        <form>
+          <div class="col-6">
+            <label for="nombre">Nombre y empresa</label>
+            <input id="nombre" name="nombre" type="text" placeholder="Ej: María Pérez — Inmobiliaria XYZ" required />
+          </div>
+          <div class="col-6">
+            <label for="mail">Email</label>
+            <input id="mail" name="mail" type="email" placeholder="correo@empresa.com" required />
+          </div>
+          <div class="col-6">
+            <label for="fono">Teléfono</label>
+            <input id="fono" name="fono" type="tel" placeholder="+56 9 1234 5678" />
+          </div>
+          <div class="col-6">
+            <label for="tipo">Tipo de proyecto</label>
+            <select id="tipo" name="tipo">
+              <option>Obras civiles</option>
+              <option>Estructuras metálicas (industrial/logística)</option>
+              <option>Diseño de ambientes y paisajismo</option>
+            </select>
+          </div>
+          <div class="col-12">
+            <label for="msg">Descripción</label>
+            <textarea id="msg" name="msg" placeholder="Cuéntanos ubicación, m² aproximados, plazos y alcances."></textarea>
+          </div>
+          <div class="col-12">
+            <button class="btn" type="submit">Enviar</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between">
+        <small>© G&C Gestión y Construcción — 2025</small>
+        <small>RUT • Dirección • contacto@gyc.cl • +56 9 0000 0000</small>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
