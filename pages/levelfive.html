@@ -56,12 +56,15 @@
     .service .icon{flex:0 0 44px;height:44px;border-radius:10px;background:rgba(245,158,11,.15);display:grid;place-items:center;border:1px solid rgba(245,158,11,.35)}
     .bullets{margin:8px 0 0;padding-left:20px;color:var(--muted)}
 
-    /* Projects */
-    .projects .grid3{display:grid;grid-template-columns:repeat(12,1fr);gap:20px}
-    .project{grid-column:span 12;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.04)}
-    .project img{aspect-ratio:4/3;object-fit:cover;width:100%}
-    .project .info{padding:14px 16px;display:flex;justify-content:space-between;align-items:center}
-    .tag{font-size:12px;padding:6px 10px;border-radius:999px;border:1px solid rgba(255,255,255,.18);color:var(--muted)}
+    /* Projects fade overlay effect */
+    .projects .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+    .project-card{position:relative;overflow:hidden;border-radius:16px;box-shadow:var(--shadow)}
+    .project-card img{width:100%;height:100%;object-fit:cover;display:block;transition:opacity .5s ease}
+    .project-info{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;background:rgba(15,23,42,0.6);color:var(--fg);padding:20px;text-align:center;opacity:0;transition:opacity .5s ease}
+    .project-info h3{margin:0 0 10px}
+    .project-info p{font-size:14px;color:var(--muted)}
+    .project-card:hover img{opacity:.3}
+    .project-card:hover .project-info{opacity:1}
 
     /* Differentiators */
     .badges{display:grid;grid-template-columns:repeat(12,1fr);gap:12px;margin-top:16px}
@@ -176,37 +179,40 @@
       </div>
     </section>
 
-    <!-- PROYECTOS -->
-    <section id="proyectos" class="projects" aria-labelledby="proyectos-title">
-      <div class="container">
-        <h2 id="proyectos-title">Proyectos destacados</h2>
-        <p class="lead">Casos reales con foco en resultados y cumplimiento.</p>
-        <div class="grid3">
-          <article class="project">
-            <img alt="Galpón industrial" src="/src/estructuras1.jpg" />
-            <div class="info">
-              <strong>Galpón industrial</strong>
-              <span class="tag">Estructuras</span>
-            </div>
-          </article>
-          <article class="project">
-            <img alt="Montaje de racks" src="/src/logistica.jpg" />
-            <div class="info">
-              <strong>Centro de distribución</strong>
-              <span class="tag">Logística</span>
-            </div>
-          </article>
-          <article class="project">
-            <img alt="Vivienda SIP" src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?q=80&w=1200&auto=format&fit=crop" />
-            <div class="info">
-              <strong>Vivienda panel SIP</strong>
-              <span class="tag">Obras civiles</span>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
+<!-- PROYECTOS -->
+<section id="proyectos" class="projects">
+<div class="container">
+<h2>Proyectos destacados</h2>
+<p class="lead">Casos reales con foco en innovación y calidad.</p>
+<div class="grid3">
+<div class="project-card">
+<img src="/src/estructuras1.jpg" alt="Galpón industrial" />
+<div class="project-info">
+<h3>Galpón Industrial</h3>
+<p>Fabricación y montaje de galpón para industria de alimentos, modalidad refrigerada. 2500 m², entregado en 2024.</p>
+</div>
+</div>
 
+
+<div class="project-card">
+<img src="/src/logistica.jpg" alt="Centro de distribución" />
+<div class="project-info">
+<h3>Centro de Distribución</h3>
+<p>Montaje de racks selectivos y estructura metálica. Proyecto logístico en Santiago, +30% de capacidad de almacenamiento.</p>
+</div>
+</div>
+
+
+<div class="project-card">
+<img src="/src/unnamed.png" alt="Vivienda SIP" />
+<div class="project-info">
+<h3>Vivienda Panel SIP</h3>
+<p>Construcción de vivienda de 150 m² en Ovalle con sistema SIP y terminaciones EIFS. Entregada en 2023.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
     <!-- DIFERENCIADORES -->
     <section id="diferenciadores" aria-labelledby="diff-title">
       <div class="container">
