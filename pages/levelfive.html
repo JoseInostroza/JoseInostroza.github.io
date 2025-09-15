@@ -88,6 +88,10 @@
     /* Footer */
     footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted)}
 
+/* Palette switcher */
+.palette-switcher{position:fixed;bottom:20px;right:20px;display:flex;gap:10px;z-index:100}
+.palette-btn{width:36px;height:36px;border-radius:50%;border:none;cursor:pointer;box-shadow:var(--shadow)}
+
     /* Responsive */
     @media (min-width:700px){
       .card{grid-column:span 6}
@@ -300,5 +304,32 @@
       </div>
     </div>
   </footer>
+  <!-- Palette Switcher -->
+<div class="palette-switcher">
+<button class="palette-btn" style="background:#dc2626" onclick="setPalette('red')" title="Rojo"></button>
+<button class="palette-btn" style="background:#2563eb" onclick="setPalette('blue')" title="Azul"></button>
+<button class="palette-btn" style="background:#16a34a" onclick="setPalette('green')" title="Verde"></button>
+</div>
+
+<script>
+function setPalette(color){
+const root=document.documentElement;
+if(color==='red'){
+root.style.setProperty('--accent','#dc2626');
+root.style.setProperty('--bg','#0f172a');
+root.style.setProperty('--fg','#e5e7eb');
+}
+if(color==='blue'){
+root.style.setProperty('--accent','#7d9ab3');
+root.style.setProperty('--bg','#0f172a');
+root.style.setProperty('--fg','#e5e7eb');
+}
+if(color==='green'){
+root.style.setProperty('--accent','#16a34a');
+root.style.setProperty('--bg','#0f172a');
+root.style.setProperty('--fg','#e5e7eb');
+}
+}
+</script>
 </body>
 </html>
