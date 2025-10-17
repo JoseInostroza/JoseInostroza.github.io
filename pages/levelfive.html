@@ -7,17 +7,17 @@
   <meta name="description" content="Empresa de gestión y construcción: obras civiles, estructuras metálicas (industrial y logística) y diseño de ambientes y paisajismo. Cotiza tu proyecto hoy." />
   <style>
     :root{
-      --bg: #0f172a;          /* slate-900 */
-      --fg: #e5e7eb;          /* gray-200 */
-      --muted: #94a3b8;       /* slate-400 */
-      --card: #111827;        /* gray-900 */
-      --accent: #dc2626;      /* amber-500 */
-      --line: #1f2937;        /* gray-800 */
-      --surface: #0b1221;     /* deep */
+      --bg: #f5f4df; /* gris claro elegante */
+      --fg: #1f2937; /* gris oscuro para texto */
+      --muted: #181f67; /* gris medio */
+      --card: #ffffff; /* blanco limpio */
+      --accent: #0e5398; /* azul por defecto */
+      --line: #e4eef8;
+      --surface: #181f67;     /* deep */
       --white: #ffffff;
       --maxw: 1200px;
       --radius: 14px;
-      --shadow: 0 8px 24px rgba(0,0,0,.25);
+      --shadow: 0 6px 18px rgba(0,0,0,.08);
     }
     *{box-sizing:border-box}
     html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";line-height:1.5}
@@ -304,32 +304,7 @@
       </div>
     </div>
   </footer>
-  <!-- Palette Switcher -->
-<div class="palette-switcher">
-<button class="palette-btn" style="background:#dc2626" onclick="setPalette('red')" title="Rojo"></button>
-<button class="palette-btn" style="background:#2563eb" onclick="setPalette('blue')" title="Azul"></button>
-<button class="palette-btn" style="background:#16a34a" onclick="setPalette('green')" title="Verde"></button>
-</div>
 
-<script>
-function setPalette(color){
-const root=document.documentElement;
-if(color==='red'){
-root.style.setProperty('--accent','#dc2626');
-root.style.setProperty('--bg','#0f172a');
-root.style.setProperty('--fg','#e5e7eb');
-}
-if(color==='blue'){
-root.style.setProperty('--accent','#7d9ab3');
-root.style.setProperty('--bg','#0f172a');
-root.style.setProperty('--fg','#e5e7eb');
-}
-if(color==='green'){
-root.style.setProperty('--accent','#16a34a');
-root.style.setProperty('--bg','#0f172a');
-root.style.setProperty('--fg','#e5e7eb');
-}
-}
-</script>
+
 </body>
 </html>
