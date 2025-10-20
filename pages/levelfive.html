@@ -25,72 +25,61 @@
     a{color:inherit;text-decoration:none}
     .container{max-width:var(--maxw);margin:0 auto;padding:0 20px}
     .grid{display:grid;gap:24px}
-    header{position:sticky;top:0;z-index:50;background:linear-gradient(180deg, rgba(15,23,42,.9), rgba(15,23,42,.6));backdrop-filter: blur(8px);border-bottom:1px solid var(--line)}
+
+     /* Header */
+    header{background:#fff;box-shadow:var(--shadow);position:sticky;top:0;z-index:50}
     .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-    .brand{display:flex;gap:12px;align-items:center;font-weight:700;letter-spacing:.3px}
-    .brand .logo{width:36px;height:36px;border-radius:8px;background:conic-gradient(from 30deg, var(--accent), #ffd166, var(--accent));box-shadow:0 0 0 2px rgba(245,158,11,.35)}
-    .nav a{font-size:14px;color:var(--fg);opacity:.9}
-    .nav .links{display:flex;gap:18px;align-items:center}
-    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:10px;border:1px solid rgba(245,158,11,.4);background:var(--accent);color:#1a1a1a;font-weight:700;box-shadow:var(--shadow)}
-    .btn--ghost{background:transparent;color:var(--fg);border:1px solid var(--line);box-shadow:none}
+    .brand{font-weight:700;font-size:1.2rem;color:var(--accent)}
+    .menu{display:flex;gap:18px;align-items:center}
+    .menu a{font-weight:500;color:var(--fg)}
+    .menu .btn{padding:10px 18px;border-radius:8px;background:var(--accent);color:#fff;font-weight:600}
 
     /* Hero */
-    .hero{position:relative;isolation:isolate}
-    .hero::before{content:"";position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;opacity:.35;z-index:-2}
-    .hero::after{content:"";position:absolute;inset:0;background:radial-gradient(1200px 600px at 20% 10%, rgba(245,158,11,.25), transparent 60%), linear-gradient(180deg, rgba(15,23,42,.3), var(--bg));z-index:-1}
-    .hero .wrap{padding:88px 0 56px}
-    .kpis{display:flex;gap:18px;flex-wrap:wrap;margin-top:18px}
-    .kpi{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);padding:10px 14px;border-radius:999px;font-size:13px}
+    .hero{position:relative;background:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;color:#fff;text-align:left;padding:120px 20px}
+    .hero::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.55)}
+    .hero-content{position:relative;z-index:1;max-width:800px}
+    .hero h1{font-size:2.5rem;margin-bottom:10px}
+    .hero p{font-size:1.1rem;color:#e5e7eb;margin-bottom:20px}
+    .hero .btn{padding: 10px 18px;border-radius:8px;background:transparent;color:#fff; border: 3px solid var(--surface);}
+    .hero .btn:hover{background-color: var(--surface);}
 
-    /* Sections */
-    section{padding:56px 0;border-top:1px solid var(--line)}
-    h2{margin:0 0 16px;font-size:32px;letter-spacing:.3px}
-    p.lead{color:var(--muted);max-width:70ch}
-    .cards{display:grid;grid-template-columns:repeat(12,1fr);gap:20px}
-    .card{grid-column:span 12;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
-    .card h3{margin:0 0 8px}
-    .card .meta{color:var(--muted);font-size:14px}
+    /* Sección Nosotros */
+    section{padding:80px 0;border-bottom:1px solid var(--line)}
+    h2{text-align:center;font-size:2rem;margin-bottom:20px;color:var(--fg)}
+    p.lead{text-align:center;color:var(--muted);max-width:700px;margin:0 auto 40px}
+    .nosotros{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:40px;align-items:center}
+    .nosotros img{border-radius:var(--radius);box-shadow:var(--shadow)}
 
-    /* Services */
-    .service{display:flex;gap:16px;align-items:flex-start}
-    .service .icon{flex:0 0 44px;height:44px;border-radius:10px;background:rgba(245,158,11,.15);display:grid;place-items:center;border:1px solid rgba(245,158,11,.35)}
-    .bullets{margin:8px 0 0;padding-left:20px;color:var(--muted)}
+    /* Servicios */
+    .servicios-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;margin-top:40px}
+    .servicio{background:var(--card);border-radius:var(--radius);padding:30px;text-align:center;box-shadow:var(--shadow);transition:.3s}
+    .servicio:hover{transform:translateY(-5px)}
+    .servicio h3{margin:10px 0;color:var(--accent)}
+    .servicio p{color:var(--muted);font-size:0.95rem}
 
-    /* Projects fade overlay effect */
-    .projects .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+    /* Estadísticas */
+    .stats{display:flex;flex-wrap:wrap;justify-content:center;gap:40px;text-align:center;margin-top:60px}
+    .stat{flex:1 1 200px}
+    .stat h3{font-size:2rem;color:var(--accent)}
+    .stat p{color:var(--muted)}
+
+    /* Pilares */
+    .pilares{background:#f3f4f6;padding:80px 20px}
+    .pilares-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;text-align:center}
+    .pilar{background:#fff;padding:30px;border-radius:var(--radius);box-shadow:var(--shadow);transition:.3s}
+    .pilar:hover{background:var(--accent);color:#fff}
+    .pilar h4{margin-bottom:10px;font-weight:700}
+
+    /* Proyectos */
+    .projects{margin-top:40px}
+    .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
     .project-card{position:relative;overflow:hidden;border-radius:16px;box-shadow:var(--shadow)}
-    .project-card img{width:100%;height:100%;object-fit:cover;display:block;transition:opacity .5s ease}
-    .project-info{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;background:rgba(15,23,42,0.6);color:var(--fg);padding:20px;text-align:center;opacity:0;transition:opacity .5s ease}
-    .project-info h3{margin:0 0 10px}
-    .project-info p{font-size:14px;color:var(--muted)}
-    .project-card:hover img{opacity:.3}
+    .project-card img{width:100%;height:100%;object-fit:cover;transition:opacity .5s}
+    .project-info{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;background:rgba(0,0,0,0.55);padding:20px;text-align:center;opacity:0;transition:opacity .5s;color:#fff}
+    .project-card:hover img{opacity:.35}
     .project-card:hover .project-info{opacity:1}
 
-    /* Differentiators */
-    .badges{display:grid;grid-template-columns:repeat(12,1fr);gap:12px;margin-top:16px}
-    .badge{grid-column:span 12;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);padding:12px 14px;border-radius:12px}
-
-    /* Process */
-    .steps{display:grid;grid-template-columns:repeat(12,1fr);gap:14px;margin-top:10px}
-    .step{grid-column:span 12;border-left:3px solid var(--accent);padding:10px 14px;background:rgba(255,255,255,.04);border-radius:8px}
-
-    /* CTA band */
-    .cta{background:linear-gradient(90deg, rgba(245,158,11,.15), rgba(245,158,11,.05));border:1px solid rgba(245,158,11,.35);border-radius:16px;padding:22px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
-
-    /* Contact */
-    form{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
-    label{font-size:14px;color:var(--muted)}
-    input,select,textarea{width:100%;padding:12px 12px;border-radius:10px;border:1px solid var(--line);background:#0b1221;color:var(--fg)}
-    textarea{min-height:120px}
-    .col-6{grid-column:span 12}
-    .col-12{grid-column:span 12}
-
-    /* Footer */
-    footer{padding:36px 0;border-top:1px solid var(--line);color:var(--muted)}
-
-/* Palette switcher */
-.palette-switcher{position:fixed;bottom:20px;right:20px;display:flex;gap:10px;z-index:100}
-.palette-btn{width:36px;height:36px;border-radius:50%;border:none;cursor:pointer;box-shadow:var(--shadow)}
+    footer{padding:40px 0;text-align:center;color:var(--muted);font-size:0.9rem}
 
     /* Responsive */
     @media (min-width:700px){
@@ -108,80 +97,86 @@
 <body>
   <header>
     <div class="container nav">
-      <div class="brand"><div class="logo" aria-hidden="true"></div>Levelfive</div>
-      <nav class="links" aria-label="principal">
+      <div class="brand">Level Five</div>
+      <nav class="menu">
+        <a href="#inicio">Inicio</a>
+        <a href="#nosotros">Nosotros</a>
         <a href="#servicios">Servicios</a>
         <a href="#proyectos">Proyectos</a>
-        <a href="#diferenciadores">Por qué Levelfive</a>
         <a href="#contacto">Contacto</a>
-        <a class="btn" href="#contacto">Solicitar presupuesto</a>
+        <a class="btn" href="#contacto">Cotizar Proyecto</a>
       </nav>
     </div>
   </header>
 
   <main>
     <!-- HERO -->
-    <section class="hero" aria-label="Inicio">
-      <div class="container wrap">
-        <h1 style="font-size:44px;line-height:1.1;margin:0 0 10px">Gestión y Construcción que cumple</h1>
-        <p class="lead">Obras civiles, estructuras metálicas para el área industrial y logística, y diseño de ambientes y paisajismo. Plazos claros, seguridad en obra y terminaciones de alto estándar.</p>
-        <div style="display:flex;gap:12px;margin:18px 0 8px">
-          <a class="btn" href="#contacto">Solicitar presupuesto</a>
-          <a class="btn btn--ghost" href="#proyectos">Ver proyectos</a>
-        </div>
-        <div class="kpis">
-          <div class="kpi">+50 proyectos entregados</div>
-          <div class="kpi">Cobertura zona norte-centro</div>
-          <div class="kpi">Equipo con protocolos de seguridad</div>
+  <section class="hero" id="inicio">
+    <div class="hero-content container">
+      <h1>Expertos en gestión inmobiliaria y construcción de proyectos arquitectónicos</h1>
+      <p>Diseñamos, planificamos y ejecutamos proyectos de alta calidad en el sector de la construcción.</p>
+      <a class="btn" href="#contacto">Cotizar Proyecto</a>
+    </div>
+  </section>
+
+  <!--Nosotros-->
+
+    <section id="nosotros">
+    <div class="container">
+      <h2>Sobre Nosotros</h2>
+      <p class="lead">Somos un equipo multidisciplinario conformado por Constructores Civiles, Arquitectos, Ingenieros Comerciales y Corredores de Propiedades, comprometidos con la excelencia y la innovación.</p>
+      <div class="nosotros">
+        <img src="../src/depositphotos_34947261-stock-photo-modern-buildings-in-the-business.jpg" alt="Equipo de trabajo" />
+        <div>
+          <h3>Un equipo lleno de profesionales de alta experiencia</h3>
+          <p>En Level Five S.p.A., ofrecemos soluciones integrales para el desarrollo de proyectos constructivos, abarcando desde la ingeniería y planificación hasta la ejecución y control financiero.</p>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
     <!-- SERVICIOS -->
-    <section id="servicios" aria-labelledby="servicios-title">
-      <div class="container">
-        <h2 id="servicios-title">Servicios</h2>
-        <p class="lead">Tres áreas que cubren el ciclo completo: diseño, construcción y soluciones industriales/logísticas.</p>
-        <div class="cards">
-          <article class="card service">
-            <div class="icon" aria-hidden="true">🏗️</div>
-            <div>
-              <h3>Obras civiles</h3>
-              <p class="meta">Arquitectura e interiores, construcción de viviendas y remodelaciones con terminaciones EIFS, marmolina y panel SIP.</p>
-              <ul class="bullets">
-                <li>Levantamiento y planimetría</li>
-                <li>Viviendas y remodelaciones</li>
-                <li>Terminaciones EIFS / marmolina / SIP</li>
-              </ul>
-            </div>
-          </article>
-          <article class="card service">
-            <div class="icon" aria-hidden="true">🏭</div>
-            <div>
-              <h3>Estructuras metálicas (industrial y logística)</h3>
-              <p class="meta">Galpones, revestimientos, cubiertas, racks selectivos y piezas especiales para centros de distribución.</p>
-              <ul class="bullets">
-                <li>Galpones y ampliaciones</li>
-                <li>Revestimientos y cubiertas</li>
-                <li>Racks selectivos y piezas a medida</li>
-              </ul>
-            </div>
-          </article>
-          <article class="card service">
-            <div class="icon">🪑</div>
-            <div>
-              <h3>Muebles de Línea</h3>
-              <p class="meta">Diseño y fabricación de muebles modernos y funcionales para hogares, proyectos inmobiliarios y oficinas.</p>
-              <ul class="bullets">
-                <li>Muebles a medida</li>
-                <li>Diseño moderno y funcional</li>
-                <li>Espacios comerciales y oficinas</li>
-              </ul>
-            </div>
-          </article>
+    <section id="servicios">
+    <div class="container">
+      <h2>Nuestros Servicios</h2>
+      <p class="lead">Nuestros servicios profesionales abarcan lo que necesitas para llevar tu proyecto al siguiente nivel.</p>
+      <div class="servicios-grid">
+        <div class="servicio">
+          <h3>Obras Civiles</h3>
+          <p>Diseño, planificación y ejecución de proyectos de infraestructura, edificaciones y obras públicas, garantizando cumplimiento de plazos y calidad.</p>
+        </div>
+        <div class="servicio">
+          <h3>Estructuras Metálicas</h3>
+          <p>Fabricación y montaje de galpones industriales, comerciales y residenciales. Modalidades de productos secos, refrigerados y congelados.</p>
+        </div>
+        <div class="servicio">
+          <h3>Muebles de Línea</h3>
+          <p>Diseño y fabricación de muebles modernos y funcionales para hogares, oficinas y espacios comerciales.</p>
         </div>
       </div>
-    </section>
+      <div class="stats">
+        <div class="stat"><h3>100+</h3><p>Proyectos realizados</p></div>
+        <div class="stat"><h3>125+</h3><p>Clientes activos</p></div>
+        <div class="stat"><h3>10+</h3><p>Proyectos en inicio</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!--Pilares-->
+
+    <section class="pilares" id="pilares">
+    <div class="container">
+      <h2>Nuestros Pilares</h2>
+      <p class="lead">Los cinco pilares fundamentales de nuestra empresa son esenciales para la solidez y el éxito a largo plazo.</p>
+      <div class="pilares-grid">
+        <div class="pilar"><h4>1. Estrategia</h4><p>Visión general y planificación sólida para cada proyecto.</p></div>
+        <div class="pilar"><h4>2. Área Comercial</h4><p>Enfoque en generación de valor y relaciones a largo plazo.</p></div>
+        <div class="pilar"><h4>3. Gestión de Equipos</h4><p>Talento humano altamente capacitado y coordinado.</p></div>
+        <div class="pilar"><h4>4. Gestión de Operaciones</h4><p>Optimización de procesos y eficiencia productiva.</p></div>
+        <div class="pilar"><h4>5. Control Financiero</h4><p>Salud económica y cumplimiento presupuestario.</p></div>
+      </div>
+    </div>
+  </section>
 
 <!-- PROYECTOS -->
 <section id="proyectos" class="projects">
