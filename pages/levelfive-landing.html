@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Level Five — Innova & Construye</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --orange: #D2691E;
+    --orange-bright: #E8761F;
+    --navy: #1B2D4F;
+    --navy-dark: #0F1C33;
+    --navy-mid: #243555;
+    --white: #F8F6F2;
+    --gray: #8A8A8A;
+    --light: #F0EDE8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Barlow', sans-serif;
+    background: var(--navy-dark);
+    color: var(--white);
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    padding: 20px 60px;
+    display: flex; align-items: center; justify-content: space-between;
+    background: rgba(15, 28, 51, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(210, 105, 30, 0.2);
+    transition: all 0.3s;
+  }
+  .nav-logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900; font-size: 1.6rem; letter-spacing: 2px;
+    color: var(--orange-bright);
+  }
+  .nav-logo span { color: var(--white); font-weight: 300; }
+  .nav-links { display: flex; gap: 40px; list-style: none; }
+  .nav-links a {
+    color: rgba(248,246,242,0.7); text-decoration: none;
+    font-size: 0.85rem; letter-spacing: 1.5px; text-transform: uppercase;
+    font-weight: 500; transition: color 0.3s;
+  }
+  .nav-links a:hover { color: var(--orange-bright); }
+  .nav-cta {
+    background: var(--orange-bright); color: white; padding: 10px 28px;
+    border: none; font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700; font-size: 0.9rem; letter-spacing: 2px;
+    text-transform: uppercase; cursor: pointer; transition: all 0.3s;
+    clip-path: polygon(8px 0%, 100% 0%, calc(100% - 8px) 100%, 0% 100%);
+    text-decoration: none;
+  }
+  .nav-cta:hover { background: var(--orange); transform: translateY(-1px); }
+
+  /* HERO */
+  #hero {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 60%, #1a3a6e 100%);
+    display: flex; align-items: center;
+    position: relative; overflow: hidden;
+    padding: 120px 60px 80px;
+  }
+  .hero-grid-bg {
+    position: absolute; inset: 0;
+    background-image: 
+      linear-gradient(rgba(210,105,30,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(210,105,30,0.06) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-accent {
+    position: absolute; right: -100px; top: -100px;
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, rgba(210,105,30,0.12) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .hero-accent2 {
+    position: absolute; left: -50px; bottom: -100px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, rgba(27,45,79,0.8) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .hero-content { position: relative; z-index: 2; max-width: 750px; }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(210,105,30,0.15);
+    border: 1px solid rgba(210,105,30,0.4);
+    color: var(--orange-bright); padding: 6px 18px;
+    font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase;
+    font-weight: 600; margin-bottom: 30px;
+    animation: fadeUp 0.8s ease forwards;
+  }
+  .hero-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(4rem, 9vw, 8rem);
+    font-weight: 900; line-height: 0.9;
+    text-transform: uppercase; letter-spacing: -1px;
+    animation: fadeUp 0.8s 0.1s ease both;
+  }
+  .hero-title .accent { color: var(--orange-bright); display: block; }
+  .hero-subtitle {
+    font-size: 1.1rem; color: rgba(248,246,242,0.65);
+    line-height: 1.7; margin-top: 24px; max-width: 500px;
+    font-weight: 300; animation: fadeUp 0.8s 0.2s ease both;
+  }
+  .hero-btns {
+    display: flex; gap: 16px; margin-top: 40px; flex-wrap: wrap;
+    animation: fadeUp 0.8s 0.3s ease both;
+  }
+  .btn-primary {
+    background: var(--orange-bright); color: white;
+    padding: 16px 40px; border: none; cursor: pointer;
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 1rem; letter-spacing: 2px; text-transform: uppercase;
+    clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+    transition: all 0.3s; text-decoration: none; display: inline-block;
+  }
+  .btn-primary:hover { background: var(--orange); transform: translateY(-2px); }
+  .btn-secondary {
+    background: transparent; color: var(--white);
+    padding: 16px 40px; border: 1px solid rgba(248,246,242,0.3);
+    cursor: pointer; font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600; font-size: 1rem; letter-spacing: 2px;
+    text-transform: uppercase; transition: all 0.3s; text-decoration: none; display: inline-block;
+  }
+  .btn-secondary:hover { border-color: var(--orange-bright); color: var(--orange-bright); }
+  .hero-stats {
+    display: flex; gap: 50px; margin-top: 60px; flex-wrap: wrap;
+    animation: fadeUp 0.8s 0.4s ease both;
+  }
+  .stat { border-left: 3px solid var(--orange-bright); padding-left: 16px; }
+  .stat-num {
+    font-family: 'Barlow Condensed', sans-serif; font-size: 2.4rem;
+    font-weight: 900; color: var(--orange-bright); line-height: 1;
+  }
+  .stat-label { font-size: 0.75rem; color: rgba(248,246,242,0.5); letter-spacing: 1.5px; text-transform: uppercase; margin-top: 4px; }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* SECTIONS */
+  section { padding: 100px 60px; }
+  .section-label {
+    font-size: 0.7rem; letter-spacing: 4px; text-transform: uppercase;
+    color: var(--orange-bright); font-weight: 600; margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: 'Barlow Condensed', sans-serif; font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800; text-transform: uppercase; line-height: 1; color: var(--white);
+  }
+  .section-title span { color: var(--orange-bright); }
+  .section-line {
+    width: 60px; height: 3px; background: var(--orange-bright); margin: 20px 0 40px;
+  }
+
+  /* ABOUT */
+  #nosotros {
+    background: var(--navy-dark);
+    position: relative;
+  }
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; margin-top: 60px;
+  }
+  .about-text p {
+    color: rgba(248,246,242,0.7); line-height: 1.8; font-size: 1rem;
+    margin-bottom: 20px; font-weight: 300;
+  }
+  .about-text strong { color: var(--orange-bright); font-weight: 600; }
+  .vision-box {
+    background: rgba(27,45,79,0.6); border: 1px solid rgba(210,105,30,0.25);
+    padding: 40px; position: relative;
+  }
+  .vision-box::before {
+    content: '"'; position: absolute; top: -20px; left: 20px;
+    font-size: 6rem; color: var(--orange-bright); opacity: 0.3;
+    font-family: 'Barlow Condensed', sans-serif; line-height: 1;
+  }
+  .vision-box p {
+    color: rgba(248,246,242,0.8); font-style: italic; line-height: 1.8;
+    font-size: 0.95rem; font-weight: 300;
+  }
+  .vision-label {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    color: var(--orange-bright); letter-spacing: 2px; text-transform: uppercase;
+    font-size: 0.8rem; margin-bottom: 16px;
+  }
+
+  /* SERVICES */
+  #servicios { background: var(--navy); }
+  .services-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2px; margin-top: 60px;
+  }
+  .service-card {
+    background: rgba(15,28,51,0.8); padding: 40px 36px;
+    border-top: 3px solid transparent; transition: all 0.4s;
+    cursor: default; position: relative; overflow: hidden;
+  }
+  .service-card::after {
+    content: ''; position: absolute; bottom: 0; left: 0;
+    width: 0; height: 3px; background: var(--orange-bright);
+    transition: width 0.4s;
+  }
+  .service-card:hover { background: rgba(27,45,79,0.9); border-top-color: var(--orange-bright); }
+  .service-card:hover::after { width: 100%; }
+  .service-icon {
+    font-size: 2.5rem; margin-bottom: 20px; display: block;
+  }
+  .service-title {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 1.3rem; text-transform: uppercase; letter-spacing: 1px;
+    color: var(--white); margin-bottom: 12px;
+  }
+  .service-desc {
+    color: rgba(248,246,242,0.55); font-size: 0.88rem; line-height: 1.7; font-weight: 300;
+  }
+  .service-items {
+    margin-top: 16px; display: flex; flex-direction: column; gap: 6px;
+  }
+  .service-item {
+    font-size: 0.8rem; color: rgba(248,246,242,0.5);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .service-item::before { content: '—'; color: var(--orange-bright); font-weight: 700; }
+
+  /* PROJECTS */
+  #proyectos { background: var(--navy-dark); }
+  .projects-tabs {
+    display: flex; gap: 0; margin: 40px 0; flex-wrap: wrap;
+  }
+  .tab-btn {
+    padding: 12px 28px; background: transparent;
+    border: 1px solid rgba(248,246,242,0.15); color: rgba(248,246,242,0.5);
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 600;
+    font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase;
+    cursor: pointer; transition: all 0.3s; border-right: none;
+  }
+  .tab-btn:last-child { border-right: 1px solid rgba(248,246,242,0.15); }
+  .tab-btn.active, .tab-btn:hover {
+    background: var(--orange-bright); color: white;
+    border-color: var(--orange-bright);
+  }
+  .project-panel { display: none; }
+  .project-panel.active { display: block; }
+  .projects-mosaic {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px;
+  }
+  .project-item {
+    aspect-ratio: 4/3; background: var(--navy-mid);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem; font-weight: 700; text-align: center;
+    padding: 20px; text-transform: uppercase; letter-spacing: 1px;
+    color: rgba(248,246,242,0.4); border: 1px solid rgba(27,45,79,0.5);
+    position: relative; overflow: hidden; transition: all 0.4s;
+  }
+  .project-item:first-child { grid-column: span 2; }
+  .project-item .proj-icon { font-size: 2rem; margin-bottom: 10px; opacity: 0.4; }
+  .project-item:hover { background: rgba(210,105,30,0.1); color: var(--white); }
+  .project-item:hover .proj-icon { opacity: 1; }
+  .project-label {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: linear-gradient(to top, rgba(15,28,51,0.95), transparent);
+    padding: 20px 16px 12px;
+    font-size: 0.75rem; letter-spacing: 1px;
+    color: rgba(248,246,242,0.7); font-weight: 600;
+    text-align: left; display: none;
+  }
+  .project-item:hover .project-label { display: block; }
+
+  /* CLIENTS */
+  #clientes { background: var(--navy); }
+  .clients-grid {
+    display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 2px; margin-top: 50px;
+  }
+  .client-card {
+    background: rgba(15,28,51,0.6); padding: 30px 20px;
+    display: flex; align-items: center; justify-content: center;
+    min-height: 90px; transition: all 0.3s;
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
+    font-size: 0.9rem; letter-spacing: 1px; color: rgba(248,246,242,0.45);
+    text-transform: uppercase; text-align: center;
+  }
+  .client-card:hover { background: rgba(210,105,30,0.12); color: var(--white); }
+
+  /* PARTNERS */
+  #partners { background: rgba(15,28,51,0.5); padding: 60px; }
+  .partners-title {
+    font-family: 'Barlow Condensed', sans-serif; font-size: 0.8rem;
+    letter-spacing: 4px; text-transform: uppercase; color: rgba(248,246,242,0.3);
+    text-align: center; margin-bottom: 40px;
+  }
+  .partners-row {
+    display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; align-items: center;
+  }
+  .partner-badge {
+    background: rgba(27,45,79,0.5); border: 1px solid rgba(248,246,242,0.08);
+    padding: 10px 22px; font-size: 0.8rem; letter-spacing: 1px;
+    color: rgba(248,246,242,0.4); transition: all 0.3s;
+    font-weight: 500;
+  }
+  .partner-badge:hover { color: var(--orange-bright); border-color: rgba(210,105,30,0.3); }
+
+  /* CONTACT */
+  #contacto {
+    background: linear-gradient(135deg, var(--navy-dark), var(--navy));
+    position: relative; overflow: hidden;
+  }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; margin-top: 60px; }
+  .contact-info h3 {
+    font-family: 'Barlow Condensed', sans-serif; font-size: 1.8rem;
+    font-weight: 700; margin-bottom: 30px; text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .info-item {
+    display: flex; align-items: flex-start; gap: 16px; margin-bottom: 24px;
+  }
+  .info-icon {
+    width: 42px; height: 42px; background: rgba(210,105,30,0.15);
+    border: 1px solid rgba(210,105,30,0.3); display: flex;
+    align-items: center; justify-content: center; font-size: 1.1rem;
+    flex-shrink: 0; color: var(--orange-bright);
+  }
+  .info-text { font-size: 0.9rem; color: rgba(248,246,242,0.7); line-height: 1.6; }
+  .info-text strong { color: var(--white); display: block; font-size: 0.75rem;
+    letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 3px; }
+
+  /* FORM */
+  .contact-form { display: flex; flex-direction: column; gap: 16px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-group { display: flex; flex-direction: column; gap: 6px; }
+  .form-group label {
+    font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase;
+    color: rgba(248,246,242,0.5); font-weight: 600;
+  }
+  .form-group input, .form-group textarea, .form-group select {
+    background: rgba(27,45,79,0.6); border: 1px solid rgba(248,246,242,0.12);
+    color: var(--white); padding: 14px 16px; font-family: 'Barlow', sans-serif;
+    font-size: 0.9rem; outline: none; transition: all 0.3s;
+    -webkit-appearance: none;
+  }
+  .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+    border-color: var(--orange-bright); background: rgba(27,45,79,0.8);
+  }
+  .form-group textarea { resize: vertical; min-height: 120px; }
+  .form-group select option { background: var(--navy-dark); }
+  .form-submit {
+    background: var(--orange-bright); color: white; padding: 16px 40px;
+    border: none; cursor: pointer; font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700; font-size: 1rem; letter-spacing: 3px; text-transform: uppercase;
+    transition: all 0.3s; align-self: flex-start;
+    clip-path: polygon(10px 0%, 100% 0%, calc(100% - 10px) 100%, 0% 100%);
+    min-width: 200px;
+  }
+  .form-submit:hover { background: var(--orange); transform: translateY(-2px); }
+  .form-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+  .form-success {
+    background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.3);
+    padding: 16px 20px; color: #4ade80; font-size: 0.9rem;
+    display: none; font-weight: 500;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--navy-dark); border-top: 1px solid rgba(210,105,30,0.15);
+    padding: 40px 60px; display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: gap;
+  }
+  .footer-logo {
+    font-family: 'Barlow Condensed', sans-serif; font-weight: 900;
+    font-size: 1.4rem; letter-spacing: 2px; color: var(--orange-bright);
+  }
+  .footer-logo span { color: rgba(248,246,242,0.5); font-weight: 300; }
+  .footer-copy { font-size: 0.75rem; color: rgba(248,246,242,0.3); letter-spacing: 1px; }
+  .footer-rut { font-size: 0.7rem; color: rgba(248,246,242,0.2); }
+
+  /* SCROLL REVEAL */
+  .reveal {
+    opacity: 0; transform: translateY(40px); transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible { opacity: 1; transform: none; }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 16px 24px; }
+    .nav-links { display: none; }
+    section { padding: 70px 24px; }
+    #hero { padding: 120px 24px 70px; }
+    .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+    .form-row { grid-template-columns: 1fr; }
+    .projects-mosaic { grid-template-columns: 1fr 1fr; }
+    .project-item:first-child { grid-column: span 1; }
+    footer { padding: 30px 24px; flex-direction: column; gap: 12px; text-align: center; }
+    #partners { padding: 50px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-logo">LEVEL<span>FIVE</span></div>
+  <ul class="nav-links">
+    <li><a href="#nosotros">Nosotros</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#proyectos">Proyectos</a></li>
+    <li><a href="#clientes">Clientes</a></li>
+  </ul>
+  <a href="#contacto" class="nav-cta">Cotizar</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-accent"></div>
+  <div class="hero-accent2"></div>
+  <div class="hero-content">
+    <div class="hero-badge">🏗 Innova &amp; Construye · San Bernardo, Chile</div>
+    <h1 class="hero-title">
+      CONSTRUIMOS
+      <span class="accent">TU VISIÓN</span>
+    </h1>
+    <p class="hero-subtitle">
+      Obras civiles, estructuras metálicas, logística industrial y diseño de ambientes. 
+      Soluciones integrales que superan expectativas con seguridad y durabilidad en cada proyecto.
+    </p>
+    <div class="hero-btns">
+      <a href="#proyectos" class="btn-primary">Ver Proyectos</a>
+      <a href="#contacto" class="btn-secondary">Contáctanos</a>
+    </div>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-num">+10</div>
+        <div class="stat-label">Clientes activos</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">4</div>
+        <div class="stat-label">Áreas de servicio</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">6.400</div>
+        <div class="stat-label">M² construidos</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NOSOTROS -->
+<section id="nosotros">
+  <div class="section-label">Quiénes somos</div>
+  <h2 class="section-title">NIVEL <span>SUPERIOR</span><br>EN CONSTRUCCIÓN</h2>
+  <div class="section-line"></div>
+  <div class="about-grid reveal">
+    <div class="about-text">
+      <p>
+        <strong>Level Five S.P.A.</strong> es una empresa de ingeniería y construcción ubicada en 
+        San Bernardo, con experiencia en proyectos civiles, industriales y logísticos a lo largo de Chile.
+      </p>
+      <p>
+        Nuestro equipo guía a cada cliente de manera <strong>transparente y profesional</strong> a través 
+        de cada etapa del proyecto — desde la planimetría y diseño hasta la entrega final.
+      </p>
+      <p>
+        Nos especializamos en obras civiles, estructuras metálicas para el área industrial y logística, 
+        diseño de interiores y seguridad industrial. Cada proyecto es tratado con el mismo compromiso 
+        de <strong>excelencia y calidad superior</strong>.
+      </p>
+    </div>
+    <div>
+      <div class="vision-box" style="margin-bottom: 20px;">
+        <div class="vision-label">Misión</div>
+        <p>Construir relaciones de confianza duraderas con nuestros clientes, garantizando seguridad, 
+        durabilidad y un valor excepcional en cada obra que emprendemos.</p>
+      </div>
+      <div class="vision-box">
+        <div class="vision-label">Visión</div>
+        <p>Ser sinónimo de confianza y satisfacción en la Construcción Comercial y Logística — 
+        el partner constructivo que transforma sueños en realidad tangible.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios">
+  <div class="section-label">Lo que hacemos</div>
+  <h2 class="section-title">NUESTROS <span>SERVICIOS</span></h2>
+  <div class="section-line"></div>
+  <div class="services-grid reveal">
+    <div class="service-card">
+      <span class="service-icon">🏠</span>
+      <div class="service-title">Obras Civiles</div>
+      <div class="service-desc">Proyectos residenciales y comerciales con diseño de calidad superior.</div>
+      <div class="service-items">
+        <div class="service-item">Planimetría y Arquitectura</div>
+        <div class="service-item">Diseño de Interiores</div>
+        <div class="service-item">Construcción de Viviendas</div>
+        <div class="service-item">Proyectos a medida</div>
+      </div>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🏭</span>
+      <div class="service-title">Estructuras Metálicas</div>
+      <div class="service-desc">Fabricación y montaje de estructuras industriales de gran escala.</div>
+      <div class="service-items">
+        <div class="service-item">Construcción de Galpones</div>
+        <div class="service-item">Revestimientos y Cubiertas</div>
+        <div class="service-item">Marquesinas y Estructuras</div>
+        <div class="service-item">Naves industriales</div>
+      </div>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">📦</span>
+      <div class="service-title">Logística Industrial</div>
+      <div class="service-desc">Soluciones de almacenamiento y organización para bodegas y centros logísticos.</div>
+      <div class="service-items">
+        <div class="service-item">Suministro e instalación de Rack</div>
+        <div class="service-item">Memoria de Cálculo</div>
+        <div class="service-item">Mantención de Rack</div>
+        <div class="service-item">Habilitación de Bodegas</div>
+      </div>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🛡️</span>
+      <div class="service-title">Seguridad Industrial</div>
+      <div class="service-desc">Implementos y sistemas de protección para entornos industriales exigentes.</div>
+      <div class="service-items">
+        <div class="service-item">Cierres Perimetrales</div>
+        <div class="service-item">Barandas y Barreras</div>
+        <div class="service-item">Protección de Pilares y Rack</div>
+        <div class="service-item">Barreras de Contención</div>
+      </div>
+    </div>
+    <div class="service-card" style="grid-column: span 2 / auto">
+      <span class="service-icon">🛋️</span>
+      <div class="service-title">Diseño de Ambientes y Paisajismo</div>
+      <div class="service-desc">Fabricación y montaje de muebles de línea y diseño de espacios interiores para proyectos inmobiliarios particulares y desarrollos.</div>
+      <div class="service-items">
+        <div class="service-item">Fabricación de Muebles a Medida</div>
+        <div class="service-item">Diseño de Cocinas</div>
+        <div class="service-item">Proyectos Inmobiliarios</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROYECTOS -->
+<section id="proyectos">
+  <div class="section-label">Portafolio</div>
+  <h2 class="section-title">PROYECTOS <span>DESTACADOS</span></h2>
+  <div class="section-line"></div>
+  <div class="projects-tabs">
+    <button class="tab-btn active" onclick="showTab('civil')">Obras Civiles</button>
+    <button class="tab-btn" onclick="showTab('metal')">Estructuras Metálicas</button>
+    <button class="tab-btn" onclick="showTab('logis')">Logística</button>
+    <button class="tab-btn" onclick="showTab('diseño')">Diseño</button>
+  </div>
+
+  <div id="tab-civil" class="project-panel active reveal">
+    <div class="projects-mosaic">
+      <div class="project-item" style="background: linear-gradient(135deg,#1B2D4F,#243555)">
+        <span class="proj-icon">🏡</span>
+        Casa Mediterránea 150m²
+        <div class="project-label">Proyecto Particular · San Bernardo</div>
+      </div>
+      <div class="project-item" style="background: linear-gradient(135deg,#243555,#1a3a6e)">
+        <span class="proj-icon">📐</span>
+        Planimetría &amp; Diseño
+        <div class="project-label">Diseño arquitectónico integral</div>
+      </div>
+      <div class="project-item" style="background: linear-gradient(135deg,#1a3a6e,#1B2D4F)">
+        <span class="proj-icon">🪟</span>
+        Diseño Interiores
+        <div class="project-label">Ambientes premium</div>
+      </div>
+      <div class="project-item" style="background: linear-gradient(135deg,#1B2D4F,#0F1C33)">
+        <span class="proj-icon">🔨</span>
+        Construcción Integral
+        <div class="project-label">Desde cimientos hasta entrega</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="tab-metal" class="project-panel reveal">
+    <div class="projects-mosaic">
+      <div class="project-item" style="background: linear-gradient(135deg,#1B2D4F,#243555)">
+        <span class="proj-icon">🏗️</span>
+        Fábrica de Muebles<br>Gunter Meyer
+        <div class="project-label">Reconstrucción completa</div>
+      </div>
+      <div class="project-item" style="background: linear-gradient(135deg,#243555,#1a3a6e)">
+        <span class="proj-icon">🏢</span>
+        4 Naves de 1.600m² c/u<br>Loginsa
+        <div class="project-label">6.400m² total fabricado y montado</div>
+      </div>
+      <div class="project-item" style="background: linear-gradient(135deg,#1a3a6e,#0F1C33)">
+        <span class="proj-icon">✨</span>
+        Marquesina<br>Parque Arauco
+        <div class="project-label">Distrito de Lujo</div>
+      </div>
+      <div class="project-item" style="background: linear-gradient(135deg,#1B2D4F,#243555)">
+        <span class="proj-icon">🏭</span>
+        Galpones<br>Perilogistics
+        <div class="project-label">Fabricación y montaje</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="tab-logis" class="project-panel reveal">
+    <div class="projects-mosaic">
+      <div class="project-item" style="background: linear-gradient(135deg,#1B2D4F,#243555)">
+        <span class="proj-icon">📦</span>
+        Rack Selectivos<br>Goldenfrost
+        <div class="project-label">Suministro e instalación</div>
+      </div>
+      <div class="project-item" style="background: linear-gradient(135deg,#243555,#1a3a6e)">
+        <span class="proj-icon">🗄️</span>
+        Mini Rack<br>Pompeyo Carrasco
+        <div class="project-label">Instalación completa</div>
+      </div>
+      <div class="project-item" style="background: linear-gradient(135deg,#1a3a6e,#0F1C33)">
+        <span class="proj-icon">🔧</span>
+        Habilitación Bodegas<br>DB Schenker
+        <div class="project-label">Desarme y reorganización de rack</div>
+      </div>
+    </div>
+  </div>
+
+  <div id="tab-diseño" class="project-panel reveal">
+    <div class="projects-mosaic">
+      <div class="project-item" style="background: linear-gradient(135deg,#1B2D4F,#243555)">
+        <span class="proj-icon">🪑</span>
+        Cocinas a Medida
+        <div class="project-label">Proyectos particulares premium</div>
+      </div>
+      <div class="project-item" style="background: linear-gradient(135deg,#243555,#1a3a6e)">
+        <span class="proj-icon">🛋️</span>
+        Diseño de Ambientes
+        <div class="project-label">Interiorismo integral</div>
+      </div>
+      <div class="project-item" style="background: linear-gradient(135deg,#1a3a6e,#0F1C33)">
+        <span class="proj-icon">🌿</span>
+        Paisajismo
+        <div class="project-label">Espacios exteriores y jardines</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTES -->
+<section id="clientes">
+  <div class="section-label">Confían en nosotros</div>
+  <h2 class="section-title">NUESTROS <span>CLIENTES</span></h2>
+  <div class="section-line"></div>
+  <div class="clients-grid reveal">
+    <div class="client-card">🚚 DHL</div>
+    <div class="client-card">❄️ Goldenfrost</div>
+    <div class="client-card">📦 TW Logística</div>
+    <div class="client-card">🏢 Pompeyo Carrasco</div>
+    <div class="client-card">🥗 CIAL Alimentos</div>
+    <div class="client-card">🌐 DB Schenker</div>
+    <div class="client-card">✈️ DSV</div>
+    <div class="client-card">🏘️ Inmob. San Benito</div>
+    <div class="client-card">❄️ IceStar</div>
+    <div class="client-card">🏗 ALCOP</div>
+    <div class="client-card">🏬 Loginsa</div>
+    <div class="client-card">🔧 Perilogistics</div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<div id="partners">
+  <div class="partners-title">Nuestros Partners Estratégicos</div>
+  <div class="partners-row">
+    <div class="partner-badge">Sofrisur</div>
+    <div class="partner-badge">SAIM Ingeniería</div>
+    <div class="partner-badge">Engel & Völkers</div>
+    <div class="partner-badge">Ruach & Consulting</div>
+    <div class="partner-badge">Bold Dare</div>
+    <div class="partner-badge">ESCOLP Ingeniería</div>
+    <div class="partner-badge">DiClima</div>
+  </div>
+</div>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <div class="section-label">Hablemos</div>
+  <h2 class="section-title">SOLICITA TU <span>COTIZACIÓN</span></h2>
+  <div class="section-line"></div>
+  <div class="contact-grid reveal">
+    <div class="contact-info">
+      <h3>Estamos listos<br>para tu proyecto</h3>
+      <div class="info-item">
+        <div class="info-icon">📍</div>
+        <div class="info-text">
+          <strong>Dirección</strong>
+          Av. Las Acacias #03058<br>San Bernardo, RM, Chile
+        </div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon">📞</div>
+        <div class="info-text">
+          <strong>Teléfonos</strong>
+          +56 9 40059380<br>+56 9 49121036
+        </div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon">✉️</div>
+        <div class="info-text">
+          <strong>Email</strong>
+          contacto@levelfive.cl
+        </div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon">🌐</div>
+        <div class="info-text">
+          <strong>Web</strong>
+          www.levelfive.cl
+        </div>
+      </div>
+      <div class="info-item">
+        <div class="info-icon">🏛</div>
+        <div class="info-text">
+          <strong>RUT Comercial</strong>
+          77.996.008-8<br>
+          Rep. Legal: Rodrigo Gonzalez Muñoz
+        </div>
+      </div>
+    </div>
+    <div>
+      <form class="contact-form" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Nombre completo *</label>
+            <input type="text" placeholder="Tu nombre" required>
+          </div>
+          <div class="form-group">
+            <label>Empresa</label>
+            <input type="text" placeholder="Nombre de empresa">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Email *</label>
+            <input type="email" placeholder="correo@empresa.cl" required>
+          </div>
+          <div class="form-group">
+            <label>Teléfono</label>
+            <input type="tel" placeholder="+56 9 XXXX XXXX">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Área de interés *</label>
+          <select required>
+            <option value="" disabled selected>Selecciona un servicio</option>
+            <option>Obras Civiles</option>
+            <option>Estructuras Metálicas — Industrial</option>
+            <option>Logística — Rack y Bodegas</option>
+            <option>Seguridad Industrial</option>
+            <option>Diseño de Ambientes y Paisajismo</option>
+            <option>Otro / Consulta general</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Descripción del proyecto *</label>
+          <textarea placeholder="Cuéntanos sobre tu proyecto, ubicación, plazos y cualquier detalle relevante..." required></textarea>
+        </div>
+        <div class="form-success" id="form-success">
+          ✅ ¡Mensaje enviado con éxito! Nos contactaremos contigo a la brevedad.
+        </div>
+        <button type="submit" class="form-submit" id="submit-btn">
+          Enviar Solicitud →
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-logo">LEVEL<span>FIVE</span></div>
+    <div class="footer-rut" style="margin-top:4px">RUT: 77.996.008-8 · Level Five S.P.A.</div>
+  </div>
+  <div class="footer-copy">© 2025 Level Five S.P.A. — Innova & Construye<br>San Bernardo, Región Metropolitana</div>
+</footer>
+
+<script>
+  // Tab switching
+  function showTab(id) {
+    document.querySelectorAll('.project-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('tab-' + id).classList.add('active');
+    event.target.classList.add('active');
+  }
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Form submit
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = document.getElementById('submit-btn');
+    const success = document.getElementById('form-success');
+    btn.disabled = true;
+    btn.textContent = 'Enviando...';
+    setTimeout(() => {
+      success.style.display = 'block';
+      btn.textContent = '✅ Enviado';
+      e.target.reset();
+      setTimeout(() => {
+        btn.disabled = false;
+        btn.textContent = 'Enviar Solicitud →';
+        success.style.display = 'none';
+      }, 5000);
+    }, 1200);
+  }
+
+  // Navbar scroll effect
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').style.padding =
+      window.scrollY > 50 ? '12px 60px' : '20px 60px';
+  });
+</script>
+</body>
+</html>

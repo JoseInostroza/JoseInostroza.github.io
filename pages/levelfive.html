@@ -1,317 +1,414 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Levelfive| Obras civiles, estructuras metálicas y diseño de ambientes</title>
-  <meta name="description" content="Empresa de gestión y construcción: obras civiles, estructuras metálicas (industrial y logística) y diseño de ambientes y paisajismo. Cotiza tu proyecto hoy." />
-  <style>
-    :root{
-      --bg: #f5f4df; /* gris claro elegante */
-      --fg: #1f2937; /* gris oscuro para texto */
-      --muted: #181f67; /* gris medio */
-      --card: #ffffff; /* blanco limpio */
-      --accent: #0e5398; /* azul por defecto */
-      --line: #e4eef8;
-      --surface: #181f67;     /* deep */
-      --white: #ffffff;
-      --maxw: 1200px;
-      --radius: 14px;
-      --shadow: 0 6px 18px rgba(0,0,0,.08);
-    }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";line-height:1.5}
-    img{max-width:100%;display:block}
-    a{color:inherit;text-decoration:none}
-    .container{max-width:var(--maxw);margin:0 auto;padding:0 20px}
-    .grid{display:grid;gap:24px}
+<meta charset="UTF-8">
+<title>Level Five | Construcción Comercial & Logística</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-     /* Header */
-    header{background:#fff;box-shadow:var(--shadow);position:sticky;top:0;z-index:50}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-    .brand{font-weight:700;font-size:1.2rem;color:var(--accent)}
-    .menu{display:flex;gap:18px;align-items:center}
-    .menu a{font-weight:500;color:var(--fg)}
-    .menu .btn{padding:10px 18px;border-radius:8px;background:var(--accent);color:#fff;font-weight:600}
+<style>
+:root{
+  --primary:#db6f26;
+  --accent:#2f4b6f;
+  --dark:#1f2937;
+  --light:#f9fafb;
+  --gray:#e5e7eb;
+}
 
-    /* Hero */
-    .hero{position:relative;background:url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;color:#fff;text-align:left;padding:120px 20px}
-    .hero::after{content:'';position:absolute;inset:0;background:rgba(0,0,0,0.55)}
-    .hero-content{position:relative;z-index:1;max-width:800px}
-    .hero h1{font-size:2.5rem;margin-bottom:10px}
-    .hero p{font-size:1.1rem;color:#e5e7eb;margin-bottom:20px}
-    .hero .btn{padding: 10px 18px;border-radius:8px;background:transparent;color:#fff; border: 3px solid var(--surface);}
-    .hero .btn:hover{background-color: var(--surface);}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
 
-    /* Sección Nosotros */
-    section{padding:80px 0;border-bottom:1px solid var(--line)}
-    h2{text-align:center;font-size:2rem;margin-bottom:20px;color:var(--fg)}
-    p.lead{text-align:center;color:var(--muted);max-width:700px;margin:0 auto 40px}
-    .nosotros{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:40px;align-items:center}
-    .nosotros img{border-radius:var(--radius);box-shadow:var(--shadow)}
+body{
+  background:var(--light);
+  color:var(--dark);
+  line-height:1.6;
+}
+/* ---------- NAVBAR ---------- */
+.navbar{
+  position:fixed;
+  top:0;
+  width:100%;
+  z-index:1000;
+  background:rgba(15,23,42,.85);
+  backdrop-filter:blur(8px);
+  transition:.3s ease;
+}
 
-    /* Servicios */
-    .servicios-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;margin-top:40px}
-    .servicio{background:var(--card);border-radius:var(--radius);padding:30px;text-align:center;box-shadow:var(--shadow);transition:.3s}
-    .servicio:hover{transform:translateY(-5px)}
-    .servicio h3{margin:10px 0;color:var(--accent)}
-    .servicio p{color:var(--muted);font-size:0.95rem}
+.nav-container{
+  max-width:1200px;
+  margin:auto;
+  padding:15px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
 
-    /* Estadísticas */
-    .stats{display:flex;flex-wrap:wrap;justify-content:center;gap:40px;text-align:center;margin-top:60px}
-    .stat{flex:1 1 200px}
-    .stat h3{font-size:2rem;color:var(--accent)}
-    .stat p{color:var(--muted)}
+.logo{
+  color:white;
+  font-weight:700;
+  letter-spacing:1px;
+}
 
-    /* Pilares */
-    .pilares{background:#f3f4f6;padding:80px 20px}
-    .pilares-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;text-align:center}
-    .pilar{background:#fff;padding:30px;border-radius:var(--radius);box-shadow:var(--shadow);transition:.3s}
-    .pilar:hover{background:var(--accent);color:#fff}
-    .pilar h4{margin-bottom:10px;font-weight:700}
+.nav-links{
+  list-style:none;
+  display:flex;
+  gap:35px;
+}
 
-    /* Proyectos */
-    .projects{margin-top:40px}
-    .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-    .project-card{position:relative;overflow:hidden;border-radius:16px;box-shadow:var(--shadow)}
-    .project-card img{width:100%;height:100%;object-fit:cover;transition:opacity .5s}
-    .project-info{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;background:rgba(0,0,0,0.55);padding:20px;text-align:center;opacity:0;transition:opacity .5s;color:#fff}
-    .project-card:hover img{opacity:.35}
-    .project-card:hover .project-info{opacity:1}
-    
-    /* CTA band */
-    .cta{background:linear-gradient(90deg, rgba(245,158,11,.15), rgba(245,158,11,.05));border:1px solid rgba(245,158,11,.35);border-radius:16px;padding:22px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
+.nav-links a{
+  text-decoration:none;
+  color:white;
+  font-weight:500;
+  position:relative;
+}
 
-    /* Contact */
-    form{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
-    label{font-size:14px;color:var(--muted)}
-    input,select,textarea{width:100%;padding:12px 12px;border-radius:10px;border:1px solid var(--fg);background:var(--line);color:var(--fg)}
-    textarea{min-height:120px}
-    .col-6{grid-column:span 12}
-    .col-12{grid-column:span 12}
+.nav-links a::after{
+  content:"";
+  position:absolute;
+  bottom:-6px;
+  left:0;
+  width:0;
+  height:2px;
+  background:var(--primary);
+  transition:.3s;
+}
 
-    /*Footer*/
-    footer{padding:40px 0;text-align:center;color:var(--muted);font-size:0.9rem}
+.nav-links a:hover::after{
+  width:100%;
+}
 
-    /* Responsive */
-    @media (min-width:700px){
-      .card{grid-column:span 6}
-      .project{grid-column:span 4}
-      .badge{grid-column:span 6}
-      .step{grid-column:span 6}
-      .col-6{grid-column:span 6}
-    }
-    @media (min-width:1024px){
-      .card{grid-column:span 4}
-    }
-  </style>
+.nav-cta{
+  background:var(--primary);
+  padding:8px 18px;
+  border-radius:30px;
+}
+
+/* ---------- BURGER ---------- */
+.burger{
+  display:none;
+  flex-direction:column;
+  cursor:pointer;
+  gap:6px;
+}
+
+.burger span{
+  width:25px;
+  height:3px;
+  background:white;
+  border-radius:5px;
+  transition:.3s;
+}
+
+/* ---------- HERO ---------- */
+.nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+header{
+  
+  background:
+    linear-gradient(rgba(47,75,111,.85), rgba(47,75,111,.85)),
+    url("https://www.empresasnewen.cl/wp-content/uploads/2021/03/tipos-de-construcciones-1.jpg") center/cover;
+  color:white;
+  padding:120px 20px;
+  text-align:center;
+}
+
+header h1{
+  font-size:3rem;
+  letter-spacing:1px;
+}
+
+header p{
+  max-width:700px;
+  margin:20px auto 0;
+  font-size:1.15rem;
+  opacity:.95;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:40px;
+  background:var(--primary);
+  color:white;
+  padding:14px 36px;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:600;
+  transition:.3s ease;
+}
+
+.btn:hover{
+  transform:translateY(-3px);
+  box-shadow:0 10px 25px rgba(0,0,0,.25);
+}
+
+/* ---------- SECTIONS ---------- */
+section{
+  padding:90px 20px;
+  max-width:1200px;
+  margin:auto;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:60px;
+}
+
+.section-title h2{
+  font-size:2.4rem;
+  color:var(--accent);
+}
+
+.section-title span{
+  display:block;
+  width:60px;
+  height:4px;
+  background:var(--primary);
+  margin:20px auto 0;
+  border-radius:10px;
+}
+
+/* ---------- GRID & CARDS ---------- */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:40px;
+}
+
+/* ---------- SERVICE CARD IMAGE ---------- */
+.service-card{
+  padding:2px;
+  overflow:hidden;
+  border-radius: 8px;
+  background-color: var(--accent);
+  color: var(--light);
+}
+
+.card-image{
+  position:relative;
+  width:100%;
+  height:220px;
+  overflow:hidden;
+  border-radius: 8px 8px 0 0;
+}
+
+.card-image img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:transform .6s ease;
+}
+
+.service-card:hover img{
+  transform:scale(1.08);
+}
+
+.card-content{
+  padding:35px 30px 40px;
+}
+
+.card-content h3{
+  margin-bottom:15px;
+}
+
+/* ---------- LOGOS ---------- */
+.logos{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+  gap:40px;
+  align-items:center;
+}
+
+.logo-box{
+  background:white;
+  border-radius:16px;
+  padding:25px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  filter:grayscale(100%);
+  opacity:.75;
+  transition:.3s ease;
+}
+
+.logo-box:hover{
+  filter:none;
+  opacity:1;
+}
+
+.logo-box img{
+  max-width:120px;
+  max-height:60px;
+}
+
+/* ---------- CTA ---------- */
+.cta{
+  background:var(--accent);
+  color:white;
+  border-radius:30px;
+  padding:80px 30px;
+  text-align:center;
+}
+
+.cta h2{
+  font-size:2.2rem;
+}
+
+.cta p{
+  max-width:600px;
+  margin:20px auto 0;
+  opacity:.95;
+}
+
+/* ---------- FOOTER ---------- */
+footer{
+  background:#0f172a;
+  color:#cbd5e1;
+  text-align:center;
+  padding:50px 20px;
+  font-size:.95rem;
+}
+
+@media(max-width:768px){
+  header h1{font-size:2.2rem;}
+
+  .burger{display:flex;}
+
+  .nav-links{
+    position:absolute;
+    top:70px;
+    left:0;
+    width:100%;
+    background:#0f172a;
+    flex-direction:column;
+    align-items:center;
+    gap:25px;
+    padding:30px 0;
+    transform:translateY(-120%);
+    transition:.4s ease;
+  }
+
+  .nav-links.active{
+    transform:translateY(0);
+  }
+}
+</style>
 </head>
+
 <body>
-  <header>
-    <div class="container nav">
-      <div class="brand">Level Five</div>
-      <nav class="menu">
-        <a href="#inicio">Inicio</a>
-        <a href="#nosotros">Nosotros</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#proyectos">Proyectos</a>
-        <a href="#contacto">Contacto</a>
-        <a class="btn" href="#contacto">Cotizar Proyecto</a>
-      </nav>
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo">LEVEL FIVE</div>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#nosotros">Nosotros</a></li>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#clientes">Clientes</a></li>
+      <li><a href="#contacto" class="nav-cta">Contacto</a></li>
+    </ul>
+
+    <div class="burger" id="burger">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
-  </header>
+  </div>
+</nav>
 
-  <main>
-    <!-- HERO -->
-  <section class="hero" id="inicio">
-    <div class="hero-content container">
-      <h1>Expertos en gestión inmobiliaria y construcción de proyectos arquitectónicos</h1>
-      <p>Diseñamos, planificamos y ejecutamos proyectos de alta calidad en el sector de la construcción.</p>
-      <a class="btn" href="#contacto">Cotizar Proyecto</a>
+<header>
+  <h1>LEVEL FIVE S.P.A.</h1>
+  <p>Especialistas en construcción comercial, logística e industrial, entregando seguridad, durabilidad y confianza.</p>
+  <a href="#contacto" class="btn">Solicitar Cotización</a>
+</header>
+
+<section>
+  <div class="section-title">
+    <h2>Quiénes Somos</h2>
+    <span></span>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Misión</h3>
+      <p>"Nuestra misión en Level Five es construir relaciones de confianza duraderas 
+con nuestros clientes, guiándolos de manera transparente y profesional a 
+través de cada etapa de su proyecto. Nos comprometemos a entregar 
+resultados que no solo cumplan, sino que superen sus expectativas, 
+garantizando seguridad, durabilidad y un valor excepcional en cada obra que 
+emprendemos."</p>
     </div>
-  </section>
-
-  <!--Nosotros-->
-
-    <section id="nosotros">
-    <div class="container">
-      <h2>Sobre Nosotros</h2>
-      <p class="lead">Somos un equipo multidisciplinario conformado por Constructores Civiles, Arquitectos, Ingenieros Comerciales y Corredores de Propiedades, comprometidos con la excelencia y la innovación.</p>
-      <div class="nosotros">
-        <img src="../src/depositphotos_34947261-stock-photo-modern-buildings-in-the-business.jpg" alt="Equipo de trabajo" />
-        <div>
-          <h3>Un equipo lleno de profesionales de alta experiencia</h3>
-          <p>En Level Five S.p.A., ofrecemos soluciones integrales para el desarrollo de proyectos constructivos, abarcando desde la ingeniería y planificación hasta la ejecución y control financiero.</p>
-        </div>
-      </div>
+    <div class="card">
+      <h3>Visión</h3>
+      <p>"Visualizamos un futuro donde Level Five sea sinónimo de confianza y 
+satisfacción en el sector de la Construcción Comercial y Logística. Queremos ser 
+el primer nombre que viene a la mente de nuestros clientes cuando piensan en 
+un partnert constructivo que transforma sus sueños en una realidad tangible y 
+de calidad superior."</p>
     </div>
-  </section>
-
-    <!-- SERVICIOS -->
-    <section id="servicios">
-    <div class="container">
-      <h2>Nuestros Servicios</h2>
-      <p class="lead">Nuestros servicios profesionales abarcan lo que necesitas para llevar tu proyecto al siguiente nivel.</p>
-      <div class="servicios-grid">
-        <div class="servicio">
-          <h3>Obras Civiles</h3>
-          <p>Diseño, planificación y ejecución de proyectos de infraestructura, edificaciones y obras públicas, garantizando cumplimiento de plazos y calidad.</p>
-        </div>
-        <div class="servicio">
-          <h3>Estructuras Metálicas</h3>
-          <p>Fabricación y montaje de galpones industriales, comerciales y residenciales. Modalidades de productos secos, refrigerados y congelados.</p>
-        </div>
-        <div class="servicio">
-          <h3>Muebles de Línea</h3>
-          <p>Diseño y fabricación de muebles modernos y funcionales para hogares, oficinas y espacios comerciales.</p>
-        </div>
-      </div>
-      <div class="stats">
-        <div class="stat"><h3>100+</h3><p>Proyectos realizados</p></div>
-        <div class="stat"><h3>125+</h3><p>Clientes activos</p></div>
-        <div class="stat"><h3>10+</h3><p>Proyectos en inicio</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!--Pilares-->
-
-    <section class="pilares" id="pilares">
-    <div class="container">
-      <h2>Nuestros Pilares</h2>
-      <p class="lead">Los cinco pilares fundamentales de nuestra empresa son esenciales para la solidez y el éxito a largo plazo.</p>
-      <div class="pilares-grid">
-        <div class="pilar"><h4>1. Estrategia</h4><p>Visión general y planificación sólida para cada proyecto.</p></div>
-        <div class="pilar"><h4>2. Área Comercial</h4><p>Enfoque en generación de valor y relaciones a largo plazo.</p></div>
-        <div class="pilar"><h4>3. Gestión de Equipos</h4><p>Talento humano altamente capacitado y coordinado.</p></div>
-        <div class="pilar"><h4>4. Gestión de Operaciones</h4><p>Optimización de procesos y eficiencia productiva.</p></div>
-        <div class="pilar"><h4>5. Control Financiero</h4><p>Salud económica y cumplimiento presupuestario.</p></div>
-      </div>
-    </div>
-  </section>
-
-<!-- PROYECTOS -->
-<section id="proyectos" class="projects">
-<div class="container">
-<h2>Proyectos destacados</h2>
-<p class="lead">Casos reales con foco en innovación y calidad.</p>
-<div class="grid3">
-<div class="project-card">
-<img src="/src/estructuras1.jpg" alt="Galpón industrial" />
-<div class="project-info">
-<h3>Galpón Industrial</h3>
-<p>Fabricación y montaje de galpón para industria de alimentos, modalidad refrigerada. 2500 m², entregado en 2024.</p>
-</div>
-</div>
-
-
-<div class="project-card">
-<img src="/src/logistica.jpg" alt="Centro de distribución" />
-<div class="project-info">
-<h3>Centro de Distribución</h3>
-<p>Montaje de racks selectivos y estructura metálica. Proyecto logístico en Santiago, +30% de capacidad de almacenamiento.</p>
-</div>
-</div>
-
-
-<div class="project-card">
-<img src="/src/unnamed.png" alt="Vivienda SIP" />
-<div class="project-info">
-<h3>Vivienda Panel SIP</h3>
-<p>Construcción de vivienda de 150 m² en Ovalle con sistema SIP y terminaciones EIFS. Entregada en 2023.</p>
-</div>
-</div>
-</div>
-</div>
+  </div>
 </section>
-    <!-- DIFERENCIADORES -->
-    <section id="diferenciadores" aria-labelledby="diff-title">
-      <div class="container">
-        <h2 id="diff-title">Por qué elegir levelfive</h2>
-        <div class="badges">
-          <div class="badge">✅ Cumplimiento de plazos</div>
-          <div class="badge">🦺 Seguridad y protocolos en obra</div>
-          <div class="badge">🛠️ Terminaciones de alto estándar</div>
-          <div class="badge">👷 Equipo experto multidisciplinario</div>
-          <div class="badge">🧰 Garantías y postventa</div>
-          <div class="badge">📈 Control de calidad y reportes</div>
-        </div>
-      </div>
-    </section>
 
-    <!-- PROCESO -->
-    <section aria-labelledby="proc-title">
-      <div class="container">
-        <h2 id="proc-title">Nuestro proceso</h2>
-        <div class="steps">
-          <div class="step"><strong>1.</strong> Levantamiento y planimetría</div>
-          <div class="step"><strong>2.</strong> Presupuesto y cronograma</div>
-          <div class="step"><strong>3.</strong> Ejecución y control de avance</div>
-          <div class="step"><strong>4.</strong> Entrega y postventa</div>
-        </div>
-      </div>
-    </section>
+<section>
+  <div class="section-title">
+    <h2>Servicios</h2>
+    <span></span>
+  </div>
 
-    <!-- CALIDAD/SEGURIDAD + CTA -->
-    <section aria-labelledby="cta-title">
-      <div class="container cta">
-        <div>
-          <h3 id="cta-title" style="margin:0 0 6px">¿Listo para empezar tu proyecto?</h3>
-          <p class="lead" style="margin:0">Agendemos una visita técnica o cotiza por WhatsApp.</p>
-        </div>
-        <div style="display:flex;gap:10px;flex-wrap:wrap">
-          <a class="btn" href="#contacto">Solicitar presupuesto</a>
-          <a class="btn btn--ghost" href="https://wa.me/00000000000" aria-label="WhatsApp">Hablar por WhatsApp</a>
-        </div>
+  <div class="grid">
+    <div class="service-card">
+      <div class="card-image">
+        <img src="/src/unnamed.png" alt="Obras civiles LevelFive" srcset="" loading="lazy">
       </div>
-    </section>
-
-    <!-- CONTACTO -->
-    <section id="contacto" aria-labelledby="contacto-title">
-      <div class="container">
-        <h2 id="contacto-title">Contacto</h2>
-        <form>
-          <div class="col-6">
-            <label for="nombre">Nombre y empresa</label>
-            <input id="nombre" name="nombre" type="text" placeholder="Ej: María Pérez — Inmobiliaria XYZ" required />
-          </div>
-          <div class="col-6">
-            <label for="mail">Email</label>
-            <input id="mail" name="mail" type="email" placeholder="correo@empresa.com" required />
-          </div>
-          <div class="col-6">
-            <label for="fono">Teléfono</label>
-            <input id="fono" name="fono" type="tel" placeholder="+56 9 1234 5678" />
-          </div>
-          <div class="col-6">
-            <label for="tipo">Tipo de proyecto</label>
-            <select id="tipo" name="tipo">
-              <option>Obras civiles</option>
-              <option>Estructuras metálicas (industrial/logística)</option>
-              <option>Diseño de ambientes y paisajismo</option>
-            </select>
-          </div>
-          <div class="col-12">
-            <label for="msg">Descripción</label>
-            <textarea id="msg" name="msg" placeholder="Cuéntanos ubicación, m² aproximados, plazos y alcances."></textarea>
-          </div>
-          <div class="col-12">
-            <button class="btn" type="submit">Enviar</button>
-          </div>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container">
-      <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between">
-        <small>© Levelfive Gestión y Construcción — 2025</small>
-        <small>RUT • Dirección • contacto@levelfive.cl • +56 9 0000 0000</small>
+      <div class="card-content">
+        <h3>Obras Civiles</h3>
+        <p>Planimetría, Diseño interiores, Arquitectura, Construcción de viviendas </p>
       </div>
     </div>
-  </footer>
 
+    <div class="service-card">
+      <div class="card-image">
+        <img src="/src/estructuras1.jpg" alt="Obras civiles LevelFive" srcset="" loading="lazy">
+      </div>
+      <div class="card-content">
+        <h3>Estructuras Metálicas</h3>
+        <p>Construcción de Galpones, Revestimientos y Cubiertas </p>
+      </div>  
+    </div>
+
+    <div class="card"><h3>Área Logística</h3><p>Mantecnión de Rack, Memoria de Cálculo, Suministro y Montaje de Rack  y 
+piezas especiales</p></div>
+    <div class="card"><h3>Seguridad Industrial</h3><p>Fabricación y Montaje de Muebles de line para proyectos</p></div>
+  </div>
+</section>
+
+<section>
+  <div class="section-title">
+    <h2>Clientes & Partners</h2>
+    <span></span>
+  </div>
+
+  <div class="logos">
+    <div class="logo-box"><img src="logos/loginsa.png" alt="Loginsa"></div>
+    <div class="logo-box"><img src="logos/parquearauco.png" alt="Parque Arauco"></div>
+    <div class="logo-box"><img src="logos/schenker.png" alt="Schenker"></div>
+    <div class="logo-box"><img src="logos/goldenfrost.png" alt="Goldenfrost"></div>
+    <div class="logo-box"><img src="logos/perilogistics.png" alt="Perilogistics"></div>
+    <div class="logo-box"><img src="logos/guntermeyer.png" alt="Gunter Meyer"></div>
+  </div>
+</section>
+
+<section class="cta" id="contacto">
+  <h2>¿Hablamos de tu proyecto?</h2>
+  <p>Estamos listos para acompañarte desde la idea hasta la ejecución.</p>
+  <a class="btn" href="mailto:contacto@levelfive.cl">contacto@levelfive.cl</a>
+</section>
+
+<footer>
+  Level Five S.P.A. · Av. Las Acacias #03058, San Bernardo<br>
+  +56 9 4005 9380 · +56 9 4912 1036 · www.levelfive.cl
+</footer>
 
 </body>
 </html>
